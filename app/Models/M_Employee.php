@@ -1,0 +1,120 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+Class M_Employee extends Model
+{
+    function  __construct()
+    {
+        parent::__construct();
+    }
+
+    function Result($error_code=0, $error_msg=0, $result='')
+    {
+        $return['error_code']=$error_code;
+        $return['error_msg']=$error_msg;
+        $return['data']=$result;
+
+        return $return;
+    }
+
+    function GetAllWorkers()
+    {
+        $this -> db -> select('*');
+        $this -> db -> from('employee');
+        $this -> db -> join('person', 'employee.id_person = person.id_person');
+        $this -> db -> join('user', 'user.id_user = person.id_user');
+        $this -> db -> where("rol = 'worker'");
+
+        $query = $this -> db -> get();//var_dump($query->result());die();
+
+        if($query -> num_rows() >= 1)
+            $return=$this->Result(0, 0, $query->result());
+        else
+            $return=$this->Result(1, 'NO_EMPLOYEE');
+
+        return $return;
+    }
+
+    function GetAllApprovedWorkers()
+    {
+        $this -> db -> select('*');
+        $this -> db -> from('employee');
+        $this -> db -> join('person', 'employee.id_person = person.id_person');		
+		$this -> db -> join('zip', 'person.id_zip = zip.id_zip');
+        $this -> db -> join('user', 'user.id_user = person.id_user');
+        $this -> db -> where("rol = 'worker'");
+        $this -> db -> where("user.status = '1'");
+        $this -> db -> where("employee.approved = '1'");
+
+        $query = $this -> db -> get();//var_dump($query->result());die();
+
+        if($query -> num_rows() >= 1)
+            $return=$this->Result(0, 0, $query->result());
+        else
+            $return=$this->Result(1, 'NO_EMPLOYEE');
+
+        return $return;
+    }
+
+    function GetWorkerByApproved($approved)
+    {
+        $this -> db -> select('*');
+        $this -> db -> from('employee');
+        $this -> db -> join('person', 'employee.id_person = person.id_person');
+        $this -> db -> join('user', 'user.id_user = person.id_user');
+        $this -> db -> where("rol = 'worker'");
+        $this -> db -> where('employee.approved = ' . "'" . $approved . "'");
+        $this -> db -> where("status = '1'");
+
+        $query = $this -> db -> get();//var_dump($query->result());die();
+
+        if($query -> num_rows() >= 1)
+            $return=$this->Result(0, 0, $query->result());
+        else
+            $return=$this->Result(1, 'NO_EMPLOYEE');
+
+        return $return;
+    }
+
+    function GetApprovedByPersonID($id_person)
+    {
+        $this -> db -> select('*');
+        $this -> db -> from('employee');
+        $this -> db -> join('person', 'employee.id_person = person.id_person');
+        $this -> db -> join('user', 'user.id_user = person.id_user');
+        $this -> db -> where("rol = 'worker'");
+        $this -> db -> where('employee.id_person = ' . "'" . $id_person . "'");
+        $this -> db -> where("status = '1'");
+
+        $query = $this -> db -> get();//var_dump($query->result());die();
+
+        if($query -> num_rows() >= 1)
+            $return=$this->Result(0, 0, $query->result());
+        else
+            $return=$this->Result(1, 'NO_EMPLOYEE');
+
+        return $return;
+    }
+
+    function GetEmployeeByUserID($id_user)
+    {
+        $this -> db -> select('*');
+        $this -> db -> from('employee');
+        $this -> db -> join('person', 'employee.id_person = person.id_person');
+        $this -> db -> join('user', 'user.id_user = person.id_user');
+        $this -> db -> where('user.id_user = ' . "'" . $id_user . "'");
+
+        $query = $this -> db -> get();//var_dump($query->result());die();
+
+        if($query -> num_rows() >= 1)
+            $return=$this->Result(0, 0, $query->result());
+        else
+            $return=$this->Result(1, 'NO_EMPLOYEE');
+
+        return $return;
+    }
+}
+?>
