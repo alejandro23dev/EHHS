@@ -2,18 +2,24 @@
 
 namespace App\Controllers;
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models\M_Main;
+use App\Models\M_Employee;
+use App\Models\M_User;
 class Employee extends BaseController
 {
     function __construct()
     {
         parent::__construct();
-        //$this->load->model('M_Employee');
+        $this->UserModel = new M_User;
+        $this->EmployeeModel = new M_Employee;
+        $this->MainModel = new M_Main;
     }
 
-	function SaveEmployment()
+	public function SaveEmployment()
     {
+
+        $MainModel = new M_Main;
+
         $field_id='';
         $existing_completed_percent=0;
 
@@ -60,8 +66,7 @@ class Employee extends BaseController
             $field_id='id_employee';
         }
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->GetCompletedPercentByPersonID($id_person);
+        $result=$MainModel->GetCompletedPercentByPersonID($id_person);
 
         if($result['error_code']=='0')
             $existing_completed_percent=$result['data']->completed_percent;
@@ -70,8 +75,7 @@ class Employee extends BaseController
 
         if($completed_percent>$existing_completed_percent)
         {//var_dump($result);
-            $this->load->model('M_Main');
-            $result = $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            $result = $MainModel->Execute($type, $fields, $datas, $table, $field_id);
         }
 //var_dump($result['data']);
         //--------------EMPLOYEE---------------
@@ -110,8 +114,7 @@ class Employee extends BaseController
         $datas['date']=$date;
         $datas['id_employee']=$id_employee;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//
 
         //----------------FORM-----------------
 
@@ -147,8 +150,7 @@ class Employee extends BaseController
         $datas['sign']=$sign1;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 1--------------
 
@@ -176,8 +178,7 @@ class Employee extends BaseController
         $datas['sign']=$sign2;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//die();
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//die();
 
         //--------------CONSENT 2--------------
 
@@ -205,17 +206,19 @@ class Employee extends BaseController
         $datas['sign']=$sign3;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 3--------------
 
         print $id_employee;
     }
 
-    function SaveEmployeeFormConsent()
+    public function SaveEmployeeFormConsent()
     {
-        $this->load->helper('General_Helper');
+
+        $MainModel = new M_Main;
+
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
@@ -253,7 +256,7 @@ class Employee extends BaseController
             $datas['id']=$id_employee;
             $field_id='id_employee';
 
-            $result=$this->M_Main->GetCompletedPercentByEmployeeID($id_employee);
+            $result=$MainModel->GetCompletedPercentByEmployeeID($id_employee);
 
             if($result['error_code']=='0')
                 $existing_completed_percent=$result['data']->completed_percent;
@@ -262,8 +265,7 @@ class Employee extends BaseController
 
             if($completed_percent>$existing_completed_percent)
             {//var_dump($result);
-                $this->load->model('M_Main');
-                $result = $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                $result = $MainModel->Execute($type, $fields, $datas, $table, $field_id);
             }
         }
         //--------------EMPLOYEE---------------
@@ -295,8 +297,7 @@ class Employee extends BaseController
         $datas['date']=$date;
         $datas['id_employee']=$id_employee;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//
 
         //----------------FORM-----------------
 
@@ -331,8 +332,7 @@ class Employee extends BaseController
             $datas['sign'] = $sign1;
             $datas['id_form'] = $id_form;
 
-            $this->load->model('M_Main');
-            $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            $MainModel->Execute($type, $fields, $datas, $table, $field_id);
         }
 
         //--------------CONSENT 1--------------
@@ -362,8 +362,7 @@ class Employee extends BaseController
             $datas['sign'] = $sign2;
             $datas['id_form'] = $id_form;
 
-            $this->load->model('M_Main');
-            $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//die();
+            $MainModel->Execute($type, $fields, $datas, $table, $field_id);//die();
         }
 
         //--------------CONSENT 2--------------
@@ -393,8 +392,7 @@ class Employee extends BaseController
             $datas['sign'] = $sign3;
             $datas['id_form'] = $id_form;
 
-            $this->load->model('M_Main');
-            $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            $MainModel->Execute($type, $fields, $datas, $table, $field_id);
         }
 
         //--------------CONSENT 3--------------
@@ -402,9 +400,11 @@ class Employee extends BaseController
         print $id_employee;
     }
 
-    function SaveEmployeeForm()
+    public function SaveEmployeeForm()
     {
-        $this->load->helper('General_Helper');
+        $MainModel = new M_Main;
+
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
@@ -432,7 +432,7 @@ class Employee extends BaseController
             $datas['id']=$id_employee;
             $field_id='id_employee';
 
-            $result=$this->M_Main->GetCompletedPercentByEmployeeID($id_employee);
+            $result=$MainModel->GetCompletedPercentByEmployeeID($id_employee);
 
             if($result['error_code']=='0')
                 $existing_completed_percent=$result['data']->completed_percent;
@@ -441,8 +441,7 @@ class Employee extends BaseController
 
             if($completed_percent>$existing_completed_percent)
             {//var_dump($result);
-                $this->load->model('M_Main');
-                $result = $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                $result = $MainModel->Execute($type, $fields, $datas, $table, $field_id);
             }
         }
         //--------------EMPLOYEE---------------
@@ -474,17 +473,18 @@ class Employee extends BaseController
         $datas['date']=$date;
         $datas['id_employee']=$id_employee;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//
 
         //----------------FORM-----------------
 
         print $id_employee;
     }
 
-    function SaveMedical()
+    public function SaveMedical()
     {
-        $this->load->helper('General_Helper');
+        $MainModel = new M_Main;
+
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
@@ -536,7 +536,7 @@ class Employee extends BaseController
             $datas['id']=$id_employee;
             $field_id='id_employee';
 
-            $result=$this->M_Main->GetCompletedPercentByEmployeeID($id_employee);
+            $result=$MainModel->GetCompletedPercentByEmployeeID($id_employee);
 
             if($result['error_code']=='0')
                 $existing_completed_percent=$result['data']->completed_percent;
@@ -545,8 +545,7 @@ class Employee extends BaseController
 
             if($completed_percent>$existing_completed_percent)
             {//var_dump($result);
-                $this->load->model('M_Main');
-                $result = $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                $result = $MainModel->Execute($type, $fields, $datas, $table, $field_id);
             }
         }
         //--------------EMPLOYEE---------------
@@ -578,8 +577,7 @@ class Employee extends BaseController
         $datas['date']=$date;
         $datas['id_employee']=$id_employee;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//
 
         //----------------FORM-----------------
 
@@ -612,8 +610,7 @@ class Employee extends BaseController
         $datas['sign']=$sign1;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 1--------------
 
@@ -641,8 +638,7 @@ class Employee extends BaseController
         $datas['sign']=$sign2;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//die();
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);//die();
 
         //--------------CONSENT 2--------------
 
@@ -670,8 +666,7 @@ class Employee extends BaseController
         $datas['sign']=$sign3;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 3--------------
 
@@ -700,8 +695,7 @@ class Employee extends BaseController
         $datas['sign']=$sign4;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //----------------RBT 1----------------
 
@@ -730,8 +724,8 @@ class Employee extends BaseController
         $datas['sign']=$sign7;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //----------------LBL 1----------------
 
@@ -760,8 +754,7 @@ class Employee extends BaseController
         $datas['sign']=$sign8;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //----------------LBL 2----------------
 
@@ -790,17 +783,19 @@ class Employee extends BaseController
         $datas['sign']=$sign9;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //----------------LBL 3----------------
 
         print $id_employee;
     }
 
-    function SaveOrientation()
+    public function SaveOrientation()
     {
-        $this->load->helper('General_Helper');
+
+        $MainModel = new M_Main;
+
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
 
         $consent_name1=$this->input->post('consent_name1');
@@ -841,7 +836,7 @@ class Employee extends BaseController
             $datas['id']=$id_employee;
             $field_id='id_employee';
 
-            $result=$this->M_Main->GetCompletedPercentByEmployeeID($id_employee);
+            $result=$MainModel->GetCompletedPercentByEmployeeID($id_employee);
 
             if($result['error_code']=='0')
                 $existing_completed_percent=$result['data']->completed_percent;
@@ -850,8 +845,8 @@ class Employee extends BaseController
 
             if($completed_percent>$existing_completed_percent)
             {//var_dump($result);
-                $this->load->model('M_Main');
-                $result = $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                
+                $result = $MainModel->Execute($type, $fields, $datas, $table, $field_id);
             }
         }
         //--------------EMPLOYEE---------------
@@ -883,8 +878,8 @@ class Employee extends BaseController
         $datas['date']=$date;
         $datas['id_employee']=$id_employee;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//
+        
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//
 
         //----------------FORM-----------------
 
@@ -919,8 +914,8 @@ class Employee extends BaseController
         $datas['sign']=$sign1;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 1--------------
 
@@ -948,8 +943,8 @@ class Employee extends BaseController
         $datas['sign']=$sign2;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//die();
+        
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);//die();
 
         //--------------CONSENT 2--------------
 
@@ -977,8 +972,8 @@ class Employee extends BaseController
         $datas['sign']=$sign3;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        
+        $MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 3--------------
 
@@ -1013,8 +1008,8 @@ class Employee extends BaseController
             $datas['sign']=${"sign$i"};
             $datas['id_form']=$id_form;
 
-            $this->load->model('M_Main');
-            $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            
+            $MainModel->Execute($type, $fields, $datas, $table, $field_id);
         }
 
         //------------CHECKBOX 1-33------------
@@ -1022,9 +1017,12 @@ class Employee extends BaseController
         print $id_employee;
     }
 
-    function SaveTax()
+    public function SaveTax()
     {
-        $this->load->helper('General_Helper');
+
+        $MainModel = new M_Main;
+
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
@@ -1059,7 +1057,7 @@ class Employee extends BaseController
             $datas['id']=$id_employee;
             $field_id='id_employee';
 
-            $result=$this->M_Main->GetCompletedPercentByEmployeeID($id_employee);
+            $result=$MainModel->GetCompletedPercentByEmployeeID($id_employee);
 
             if($result['error_code']=='0')
                 $existing_completed_percent=$result['data']->completed_percent;
@@ -1068,8 +1066,8 @@ class Employee extends BaseController
 
             if($completed_percent>$existing_completed_percent)
             {//var_dump($result);
-                $this->load->model('M_Main');
-                $result = $this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                
+                $result = $MainModel->Execute($type, $fields, $datas, $table, $field_id);
             }
         }
         //--------------EMPLOYEE---------------
@@ -1101,8 +1099,8 @@ class Employee extends BaseController
         $datas['date']=$date;
         $datas['id_employee']=$id_employee;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//
+        
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//
 
         //----------------FORM-----------------
 
@@ -1135,8 +1133,8 @@ class Employee extends BaseController
         $datas['sign']=$sign1;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+        
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
         //--------------CONSENT 1--------------
 
@@ -1164,19 +1162,21 @@ class Employee extends BaseController
         $datas['sign']=$sign2;
         $datas['id_form']=$id_form;
 
-        $this->load->model('M_Main');
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);//die();
+        
+        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);//die();
 
         //--------------CONSENT 2--------------
 
         print $id_employee;
     }
 
-    function GoUpdateEmployee()
+    public function GoUpdateEmployee()
     {
+        $UserModel = new M_User;
+
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
@@ -1188,12 +1188,11 @@ class Employee extends BaseController
             $data['id_user']=$vars[0];
             $data['id_person']=$vars[1];
 
-            $this->load->model('M_User');
-            $data['all_forms']=$this->M_User->GetAllFormsByPersonID($data['id_person']);
-            $data['role']=$this->M_User->GetRoleByUserID($data['id_user']);
+            $data['all_forms']=$UserModel->GetAllFormsByPersonID($data['id_person']);
+            $data['role']=$UserModel->GetRoleByUserID($data['id_user']);
 
             if ($data['go_view'] != '')
-                $this->load->view($data['go_view'], $data);
+                return view($data['go_view'], $data);
         }
         else
         {
@@ -1201,11 +1200,13 @@ class Employee extends BaseController
         }
     }
 
-    function ApproveRejectEmployee()
+    public function ApproveRejectEmployee()
     {
+        $MainModel = new  M_Main;
+        
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->model('M_Main');
+            
             $i=0;
             foreach($_POST as $field_name => $value)
             {
@@ -1238,7 +1239,7 @@ class Employee extends BaseController
 
                     if (isset($datas['id']))
                     {
-                        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
                         if($result['error_msg']=='0' && $type=='INSERT')
                             print $result['data']['last_id'];
                         elseif($result['error_msg']=='0' && $type=='UPDATE')
@@ -1263,7 +1264,7 @@ class Employee extends BaseController
         }
     }
 
-    function UploadFile($type='', $id_employee='')
+    public function UploadFile($type='', $id_employee='')
     {
         $status = "";
         $msg = "";
@@ -1308,7 +1309,7 @@ class Employee extends BaseController
         echo json_encode(array('name' => $type.'_'.$id_employee,'status' => $status, 'msg' => $msg, 'file_name' => $file_name, 'file_size' => round($file_size,0)));
     }
 
-    function DeleteFile($random_folder='', $name='', $no='')
+    public function DeleteFile($random_folder='', $name='', $no='')
     {
         if($name=='')$name = $this->input->post('name');
         if($random_folder=='')$random_folder = $this->input->post('folder');

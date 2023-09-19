@@ -2,18 +2,26 @@
 
 namespace App\Controllers;
 
- if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models\M_Client;
+use App\Models\M_User;
+use App\Models\M_Main;
+use App\Models\M_Employee;
 class User extends BaseController
 {
     function  __construct()
     {
         parent::__construct();
-        $this->load->model('M_User');
+        $this->UserModel = new M_User;
+        $this->MainModel = new M_Main;
+        $this->ClientModel = new M_Client;
+        $this->EmployeeModel = new M_Employee;
     }
 
-    function index($view="user/ListMyProfile", $msg="", $success="", $warning="", $error="")
+    public function index($view="user/ListMyProfile", $msg="", $success="", $warning="", $error="")
     {
+        $UserModel = new M_User;
+        $MainModel = new M_Main;
+
         $data['msg']=$msg;
         $data['success']=$success;
         $data['warning']=$warning;
@@ -22,7 +30,7 @@ class User extends BaseController
 
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session']=GetSessionVars();
             $data['language']=LoadLanguage();
             $data['profile_type']=ProfileType($data['session']);
@@ -31,8 +39,8 @@ class User extends BaseController
             {
                 if($data['session']['id_person']!='')
                 {
-                    $data['all_forms']=$this->M_User->GetAllFormsByPersonID($data['session']['id_person']);
-                    $data['completed_percent']=$this->M_Main->GetCompletedPercentByPersonID($data['session']['id_person']);
+                    $data['all_forms']=$UserModel->GetAllFormsByPersonID($data['session']['id_person']);
+                    $data['completed_percent']=$MainModel->GetCompletedPercentByPersonID($data['session']['id_person']);
                 }
                 else
                 {
@@ -46,14 +54,14 @@ class User extends BaseController
             {
                 if($data['session']['id_person']!='')
                 {
-                    $this->load->model('M_Client');
-                    $data['client'] = $this->M_Client->GetClientByPersonID($data['session']['id_person']);
+                    $ClientModel = new M_Client;
+                    $data['client'] = $ClientModel->GetClientByPersonID($data['session']['id_person']);
                 }
                 else
                     $data['client'] = '';
             }
 
-            $this->load->view($view, $data);
+            return view($view, $data);
         }
         else
         {
@@ -61,8 +69,9 @@ class User extends BaseController
         }
     }
 
-	function SaveAccount()
+	public function SaveAccount()
     {
+        $MainModel = new M_Main;
 		if($this->session->userdata('logged_user_ehhs'))
         {
             $i=0;$field_id='';
@@ -94,8 +103,7 @@ class User extends BaseController
 				}
             }
             //print $table;die();
-			$this->load->model('M_Main');
-            $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
             if(array_key_exists('last_id', $result['data']))
             {
@@ -110,8 +118,10 @@ class User extends BaseController
         }
     }
 
-	function SaveProfile()
+	public function SaveProfile()
     {
+        $MainModel = new M_Main;
+
 		if($this->session->userdata('logged_user_ehhs'))
         {
             $i=0;
@@ -136,8 +146,7 @@ class User extends BaseController
 				}
             }
             //print $table;die();
-			$this->load->model('M_Main');
-            $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
 			if($type=='INSERT')
 			{
@@ -155,7 +164,7 @@ class User extends BaseController
 					$this->DeleteFile($random, 'photo_1.jpg', 'NO');
 
 
-					$this->load->helper('General_Helper');//print 'id_person: '.$id;
+					$this->load->helper('general_helper');//print 'id_person: '.$id;
                     UpdateSessionVars('id_person', $id);
 
 					print $id;
@@ -196,11 +205,13 @@ class User extends BaseController
         }
 	}
 
-	function GetStateByZIP()
+	public function GetStateByZIP()
 	{
+        $UserModel = new M_User;
+
 		header('Content-Type: application/json');
 		$zip=$this->input->post('zip');
-		$result=$this->M_User->GetStateByZIP($zip);
+		$result=$UserModel->GetStateByZIP($zip);
 
 		if($result['error_msg']=='0')
 			echo json_encode(array('msg' => 'OK', 'city' => $result['data']->city, 'state' => $result['data']->state, 'country' => $result['data']->country, 'id_zip' => $result['data']->id_zip));
@@ -208,7 +219,7 @@ class User extends BaseController
 			echo json_encode(array('msg' => $result['error_msg']));
 	}
 
-	function UploadFile()
+	public function UploadFile()
     {
         $status = "";
         $msg = "";
@@ -252,7 +263,7 @@ class User extends BaseController
         echo json_encode(array('status' => $status, 'msg' => $msg, 'file_name' => $file_name, 'file_size' => round($file_size,0)));
     }
 
-    function DeleteFile($random_folder='', $name='', $no='')
+    public function DeleteFile($random_folder='', $name='', $no='')
     {
         if($name=='')$name = $this->input->post('name');
         if($random_folder=='')$random_folder = $this->input->post('folder');
@@ -268,11 +279,12 @@ class User extends BaseController
         if($no=='')echo 'DELETED';
     }
 
-    function ActivateInactivateUser()
+    public function ActivateInactivateUser()
     {
+        $MainModel = new M_Main;
+        $UserModel = new M_User;
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->model('M_Main');
             $i=0;
             foreach($_POST as $field_name => $value)
             {
@@ -307,12 +319,12 @@ class User extends BaseController
 
                     if (isset($datas['id']))
                     {
-                        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
                         if($result['error_code']=='0')
                         {
                             if($user_type=='patient' && $this->input->post('status')=='0')
                             {
-                                $result=$this->M_User->GetClientByUserID($datas['id']);
+                                $result=$UserModel->GetClientByUserID($datas['id']);
 
                                 $table_c='care_schedule';
                                 $datas_c['id']=$result['data']->id_client;
@@ -320,7 +332,7 @@ class User extends BaseController
                                 $datas_c['approved'] = $this->input->post('status');
                                 $fields_c[0]='approved';
 
-                                $result=$this->M_Main->Execute($type, $fields_c, $datas_c, $table_c, $field_id_c);
+                                $result=$MainModel->Execute($type, $fields_c, $datas_c, $table_c, $field_id_c);
 
                                 if($result['error_code']=='0')
                                     print $datas['id'];//die();
@@ -328,8 +340,8 @@ class User extends BaseController
                             }
                             elseif ($user_type=='employee' && $this->input->post('status')=='0')
                             {
-                                $this->load->model('M_Employee');
-                                $result=$this->M_Employee->GetEmployeeByUserID($datas['id']);//var_dump($result);
+                                $EmployeeModel = new M_Employee;
+                                $result=$EmployeeModel->GetEmployeeByUserID($datas['id']);//var_dump($result);
 
                                 $table_e='employee_care';
                                 $datas_e['id']=$result['data'][0]->id_employee;
@@ -337,7 +349,7 @@ class User extends BaseController
                                 $datas_e['status'] = $this->input->post('status');
                                 $fields_e[0]='status';
 
-                                $result=$this->M_Main->Execute($type, $fields_e, $datas_e, $table_e, $field_id_e);
+                                $result=$MainModel->Execute($type, $fields_e, $datas_e, $table_e, $field_id_e);
 
                                 if($result['error_code']=='0')
                                     print $datas['id'];//die();

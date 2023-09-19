@@ -11,7 +11,7 @@ Class M_Main extends Model
         parent::__construct();
     }
 
-	function Result($error_code=0, $error_msg=0, $result='')
+	public function Result($error_code=0, $error_msg=0, $result='')
     {
         $return['error_code']=$error_code;
         $return['error_msg']=$error_msg;
@@ -20,7 +20,7 @@ Class M_Main extends Model
         return $return;
     }
 	
-	function GetCompletedPercentByPersonID($id_person)
+	public function GetCompletedPercentByPersonID($id_person)
 	{
 		$return=array();
 		
@@ -39,7 +39,7 @@ Class M_Main extends Model
 		return $return;
 	}
 
-	function GetCompletedPercentByEmployeeID($id_employee)
+	public function GetCompletedPercentByEmployeeID($id_employee)
 	{
 		$this -> db -> select('*');
         $this -> db -> from('employee');
@@ -56,7 +56,7 @@ Class M_Main extends Model
 		return $return;
 	}
 
-    function Execute($type='', $fields='', $datas='', $table='', $field_id='')
+    public function Execute($type='', $fields='', $datas='', $table='', $field_id='')
     {
         $return['data']='';
 
@@ -133,7 +133,7 @@ Class M_Main extends Model
         return $return;
     }
 
-    function CkeckProfile($data)
+    public function CkeckProfile($data)
 	{
 		$i=0;
 		$return=array();
@@ -157,7 +157,7 @@ Class M_Main extends Model
 		return $return;
 	}
 
-	function CkeckEmployee($data)
+	public function CkeckEmployee($data)
 	{
 		$i=0;
 		$return=array();
@@ -182,7 +182,7 @@ Class M_Main extends Model
 		return $return;
 	}
 
-	function CkeckClient($data)
+	public function CkeckClient($data)
 	{
 		$return=array();
 
@@ -206,7 +206,7 @@ Class M_Main extends Model
 		return $return;
 	}
 	
-	function Logout()
+	public function Logout()
     {
         $this->fm->logout();
     }

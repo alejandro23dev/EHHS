@@ -11,7 +11,7 @@ Class M_User extends Model
         parent::__construct();
     }
 
-    function Result($error_code=0, $error_msg=0, $result='')
+    public function Result($error_code=0, $error_msg=0, $result='')
     {
         $return['error_code']=$error_code;
         $return['error_msg']=$error_msg;
@@ -20,7 +20,7 @@ Class M_User extends Model
         return $return;
     }
 
-    function GetAccountUserByUserID($id_user)
+    public function GetAccountUserByUserID($id_user)
     {
 		$this -> db -> select('*');
         $this -> db -> from('user');
@@ -37,7 +37,7 @@ Class M_User extends Model
 		return $return;
     }
 	
-	function GetProfileUserByUserID($id_user)
+	public function GetProfileUserByUserID($id_user)
     {
 		$this -> db -> select('*');
         $this -> db -> from('person');
@@ -58,7 +58,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetStateByZIP($zip)
+    public function GetStateByZIP($zip)
     {
         $this -> db -> select('*');
         $this -> db -> from('zip');
@@ -77,7 +77,7 @@ Class M_User extends Model
         return $return;
     }
 
-    function GetEmployeeByPersonID($id_person)
+    public function GetEmployeeByPersonID($id_person)
     {
 		$this -> db -> select('*');
         $this -> db -> from('employee');
@@ -94,7 +94,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetFormByPersonID($id_person, $form_name)
+    public function GetFormByPersonID($id_person, $form_name)
     {
 		$this -> db -> select('*');
         $this -> db -> from('form');
@@ -113,7 +113,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetAllFormsByPersonID($id_person)
+    public function GetAllFormsByPersonID($id_person)
     {
 		$this -> db -> select('*');
         $this -> db -> from('form');
@@ -130,7 +130,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetRoleByUserID($id_user)
+    public function GetRoleByUserID($id_user)
     {
 		$this -> db -> select('rol');
         $this -> db -> from('user');
@@ -147,7 +147,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetRoleByPersonID($id_person)
+    public function GetRoleByPersonID($id_person)
     {
 		$this -> db -> select('rol, first_name, second_name, last_name, ssn');
         $this -> db -> from('user');
@@ -165,7 +165,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetRoleByEmployeeID($id_employee)
+    public function GetRoleByEmployeeID($id_employee)
     {
 		$this -> db -> select('rol, first_name, second_name, last_name, ssn, address');
         $this -> db -> from('user');
@@ -184,7 +184,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetConsentByPersonID($id_person, $form_name)
+    public function GetConsentByPersonID($id_person, $form_name)
     {
 		$this -> db -> select('*');
         $this -> db -> from('consent');
@@ -203,7 +203,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetEmployeeByEmployeeID($id_employee)
+    public function GetEmployeeByEmployeeID($id_employee)
     {
 		$this -> db -> select('*');
         $this -> db -> from('employee');
@@ -220,7 +220,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetFormByEmployeeID($id_employee, $form_name)
+    public function GetFormByEmployeeID($id_employee, $form_name)
     {
 		$this -> db -> select('*');
         $this -> db -> from('form');
@@ -239,7 +239,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetConsentByEmployeeID($id_employee, $form_name)
+    public function GetConsentByEmployeeID($id_employee, $form_name)
     {
 		$this -> db -> select('*');
         $this -> db -> from('consent');
@@ -258,7 +258,7 @@ Class M_User extends Model
 		return $return;
     }
 
-    function GetClientByUserID($id_user)
+    public function GetClientByUserID($id_user)
     {
         $this -> db -> select('id_client');
         $this -> db -> from('client');

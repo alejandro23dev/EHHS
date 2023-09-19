@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
- if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class PrintView extends BaseController
 {
     function  __construct()
@@ -14,12 +12,12 @@ class PrintView extends BaseController
 
 	function index()
 	{
-        $this->load->helper('General_Helper');
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
 
-		$this->load->view("Print", $data);
+		return view("Print", $data);
 	}
 }
 

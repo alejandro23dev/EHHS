@@ -1,46 +1,44 @@
-<?php 
+<?php
 
 namespace App\Controllers;
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+use App\Models\M_Dashboard;
+use App\Models\M_Care;
+use App\Models\M_Employee;
 
 class Dashboard extends BaseController
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('M_Dashboard');
+        $this->DashboardModel = new M_Dashboard;
+        $this->EmployeeModel = new M_Employee;
+        $this->CareModel = new M_Care;
     }
 
-    function GoDashboard($view="dashboard/Dashboard", $msg="", $success="", $warning="", $error="")
+    public function GoDashboard($view = "dashboard/Dashboard", $msg = "", $success = "", $warning = "", $error = "")
     {
-        $data['msg']=$msg;
-        $data['success']=$success;
-        $data['warning']=$warning;
-        $data['error']=$error;
-        $data['view']=$view;
+        $data['msg'] = $msg;
+        $data['success'] = $success;
+        $data['warning'] = $warning;
+        $data['error'] = $error;
+        $data['view'] = $view;
 
-        $this->load->helper('General_Helper');
-        $data['session']=GetSessionVars();
-        $data['language']=LoadLanguage();
-        $data['profile_type']=ProfileType($data['session']);
+        $this->load->helper('general_helper');
+        $data['session'] = GetSessionVars();
+        $data['language'] = LoadLanguage();
+        $data['profile_type'] = ProfileType($data['session']);
 
+        $EmployeeModel = new M_Employee;
+        $CareModel = new M_Care;
 
-
-        if ($data['session']['rol']=='asist')
-        {
-            $this->load->model('M_Care');
-            $this->load->model('M_Employee');
-            $data['pending_care']=$this->M_Care->GetCareByApproved(0);
-            $data['pending_employee']=$this->M_Employee->GetWorkerByApproved(0);//var_dump($data['pending_employee']);
-            $data['available_care']=$this->M_Care->GetAvailableCare();
-        }
-        elseif ($data['session']['rol']=='worker')
-        {
-            $this->load->model('M_Care');
-            $this->load->model('M_Employee');
-            $data['available_care']=$this->M_Care->GetAvailableCare();
-            $data['approved']=$this->M_Employee->GetApprovedByPersonID($data['session']['id_person']);
+        if ($data['session']['rol'] == 'asist') {
+            $data['pending_care'] = $CareModel->GetCareByApproved(0);
+            $data['pending_employee'] = $EmployeeModel->GetWorkerByApproved(0); //var_dump($data['pending_employee']);
+            $data['available_care'] = $CareModel->GetAvailableCare();
+        } elseif ($data['session']['rol'] == 'worker') {
+            $data['available_care'] = $CareModel->GetAvailableCare();
+            $data['approved'] = $EmployeeModel->GetApprovedByPersonID($data['session']['id_person']);
         }
         /*elseif ($data['session']['rol']=='patient')
             $data['no_filled']=$this->M_Main->CkeckClient($data);
@@ -48,23 +46,23 @@ class Dashboard extends BaseController
             $data['no_filled']=$this->M_Main->CkeckProfile($data);*/
 
         //echo $data['section_auth'];
-		$this->load->view($view, $data);
+        return view($view, $data);
     }
 
-    function GoAboutUs($view="dashboard/Dashboard", $msg="", $success="", $warning="", $error="")
+    public function GoAboutUs($view = "dashboard/Dashboard", $msg = "", $success = "", $warning = "", $error = "")
     {
-        $data['msg']=$msg;
-        $data['success']=$success;
-        $data['warning']=$warning;
-        $data['error']=$error;
-        $data['view']=$view;
+        $data['msg'] = $msg;
+        $data['success'] = $success;
+        $data['warning'] = $warning;
+        $data['error'] = $error;
+        $data['view'] = $view;
 
-        $this->load->helper('General_Helper');
-        $data['session']=GetSessionVars();
-        $data['language']=LoadLanguage();
-        $data['profile_type']=ProfileType($data['session']);
+        $this->load->helper('general_helper');
+        $data['session'] = GetSessionVars();
+        $data['language'] = LoadLanguage();
+        $data['profile_type'] = ProfileType($data['session']);
 
         //echo $data['section_auth'];
-		$this->load->view($view, $data);
+        return view($view, $data);
     }
 }

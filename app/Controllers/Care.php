@@ -2,21 +2,26 @@
 
 namespace App\Controllers;
 
- if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models\M_Employee;
+use App\Models\M_Client;
+use App\Models\M_Main;
 class Care extends BaseController
 {
     function __construct()
     {
         parent::__construct();
-        //$this->load->model('M_Employee');
+        $this->EmployeeModel = new M_Employee;
+        $this->ClientModel = new M_Client;
+        $this->MainModel = new M_Main;
     }
 
-    function GoAddCare()
+    public function GoAddCare()
     {
+        $ClientModel = new M_Client;
+
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
@@ -26,11 +31,11 @@ class Care extends BaseController
 
             $data['id_client']=$this->input->post('id_client');
 
-            $this->load->model('M_Client');
-            $data['client']=$this->M_Client->GetAllActiveClients();
+            
+            $data['client']= $ClientModel->GetAllActiveClients();
 
             if ($data['go_view'] != '')
-                $this->load->view($data['go_view'], $data);
+                return view($data['go_view'], $data);
         }
         else
         {
@@ -38,11 +43,14 @@ class Care extends BaseController
         }
     }
 
-    function ApproveRejectCare()
+    public function ApproveRejectCare()
     {
+
+        
+
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->model('M_Main');
+            $MainModel = new M_Main;
             $i=0;
             foreach($_POST as $field_name => $value)
             {
@@ -75,7 +83,7 @@ class Care extends BaseController
 
                     if (isset($datas['id']))
                     {
-                        $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+                        $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
                         if($result['error_msg']=='0' && $type=='INSERT')
                             print $result['data']['last_id'];
                         elseif($result['error_msg']=='0' && $type=='UPDATE')

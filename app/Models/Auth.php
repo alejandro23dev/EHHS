@@ -11,7 +11,7 @@ Class Auth extends Model
         parent::__construct();
     }
 
-    function Result($error_code=0, $error_msg=0, $result='')
+    public function Result($error_code=0, $error_msg=0, $result='')
     {
         $return['error_code']=$error_code;
         $return['error_msg']=$error_msg;
@@ -20,7 +20,7 @@ Class Auth extends Model
         return $return;
     }
 
-    function Login($username, $password)
+    public function Login($username, $password)
 	{
         $this -> db -> select('*');
         $this -> db -> from('user');
@@ -53,7 +53,7 @@ Class Auth extends Model
         return $return;
 	}
 
-	function GetPersonByUserId($id_user)
+	public function GetPersonByUserId($id_user)
 	{
         $this -> db -> select('*');
         $this -> db -> from('person');
@@ -72,7 +72,7 @@ Class Auth extends Model
         return $return;
 	}
 
-    function ValidateEmail($email)
+    public function ValidateEmail($email)
     {
         $this -> db -> select('*');
         $this -> db -> from('user');
@@ -89,7 +89,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function ValidateUserID($user)
+    public function ValidateUserID($user)
     {
         $this -> db -> select('*');
         $this -> db -> from('user');
@@ -106,7 +106,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function ValidateSecAnswers($data)
+    public function ValidateSecAnswers($data)
     {
         $this -> db -> select('*');
         $this -> db -> from('user');
@@ -154,7 +154,7 @@ Class Auth extends Model
         }
     }
 
-    function SaveToken($id_usuario, $token)//
+    public function SaveToken($id_usuario, $token)//
     {
         $query = $this->db->where('id_user', $id_usuario)->get('user');
 
@@ -174,7 +174,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function ValidaToken($token)
+    public function ValidaToken($token)
     {
         $this -> db -> select('*');
         $this -> db -> from('user');
@@ -191,7 +191,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function SaveNewPass($data)
+    public function SaveNewPass($data)
     {
 		$update_account = array(
 			'pass'=>$data['pass'],
@@ -204,7 +204,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function ActivateAccount($token)
+    public function ActivateAccount($token)
     {
         $update_account = array(
 			'activate_status'=>1,
@@ -217,7 +217,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function ResetNewPass($data)
+    public function ResetNewPass($data)
     {
         $return=$this->Login($data['user'], $data['pass']);
 
@@ -236,7 +236,7 @@ Class Auth extends Model
 		return $return;
     }
 
-    function CreateAccount($data)
+    public function CreateAccount($data)
     {
         $this->db->insert('user', $data);
 		$return=$this->Result(0, 0);
@@ -244,9 +244,8 @@ Class Auth extends Model
         return $return;
     }
 
-    function Logout()
+    public function Logout()
     {
        $this->db->close();
     }
 }
-?>

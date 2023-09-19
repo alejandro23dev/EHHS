@@ -1,0 +1,456 @@
+CRITICAL - 2023-09-19 12:43:46 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:43:47 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:43:47 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:43:51 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:27 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:28 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:28 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:28 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:28 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:28 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:28 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:29 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:47:30 --> Cannot call constructor
+in APPPATH\Controllers\Authentication.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:18 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:18 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:21 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:21 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:22 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:22 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:22 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:22 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:22 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:22 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:23 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:23 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:23 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:23 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:23 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:30 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:30 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:30 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:30 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:30 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:31 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:31 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:31 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:31 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:31 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:31 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 12:54:32 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:18 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:18 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:18 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:19 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:20 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:24 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:25 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:32 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:33 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:33 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:33 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:33 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:13:33 --> Call to a member function userdata() on null
+in APPPATH\Controllers\Authentication.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:26:56 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:26:57 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:26:57 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:26:57 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:27:21 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:27:22 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:27:22 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:27:22 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:27:22 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 13:27:23 --> Cannot call constructor
+in APPPATH\Controllers\Dashboard.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

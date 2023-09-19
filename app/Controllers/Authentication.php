@@ -2,18 +2,16 @@
 
 namespace App\Controllers;
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models\Auth;
 class Authentication extends BaseController
-
 {
+
     function __construct()
     {
-        parent::__construct();
-        $this->load->model('Auth');
+        $this->AuthModel = new Auth;
     }
 
-    function index($msg='', $success='', $warning='', $error='')
+    public function index($msg='', $success='', $warning='', $error='')
     {
         if($this->session->userdata('logged_token'))
         {
@@ -30,11 +28,14 @@ class Authentication extends BaseController
         if(!isset($data['warning']))$data['warning']=$warning;
         if(!isset($data['error']))$data['error']=$error;//echo$error;die();
 
-        $this->load->view('authentication/Login', $data);
+        return view('authentication/Login', $data);
     }
 
-    function CreateAccount()
+    public function CreateAccount()
     {
+
+        $AuthModel = new Auth;
+
         $data=array(
             'email'=>$this->input->post('email'),
             'user'=>$this->input->post('user'),
@@ -48,7 +49,7 @@ class Authentication extends BaseController
             'ans3'=>password_hash($this->input->post('ans3'), PASSWORD_DEFAULT)
         );//echo json_encode($data);
 
-        $result=$this->Auth->CreateAccount($data);
+        $result= $AuthModel->CreateAccount($data);
 
         if($result['error_msg']=='0')
         {
@@ -59,7 +60,7 @@ class Authentication extends BaseController
             echo $result['error_msg'];
     }
 
-    function Verify()
+    public function Verify()
     {
         $msg='';
         $success='';
@@ -95,7 +96,7 @@ class Authentication extends BaseController
         }
     }
 
-    function CheckDatabase($password)
+    public function CheckDatabase($password)
     {
         $id_person='';
         $username = $this->input->post('user');
@@ -133,7 +134,7 @@ class Authentication extends BaseController
         return $result;
     }
 
-    function ValidateEmail($email='',$send='')
+    public function ValidateEmail($email='',$send='')
     {
         $empty='';
 
@@ -354,7 +355,7 @@ class Authentication extends BaseController
         else{print 'EMPTY';}
     }
 
-    function ValidateUserID($user='',$type='')
+    public function ValidateUserID($user='',$type='')
     {
         if($user=='')$user = strip_tags($_POST['user']);
         if($type=='')$type = $_POST['type'];
@@ -382,7 +383,7 @@ class Authentication extends BaseController
 			print 'EMPTY';
     }
 
-    function ValidateSecAnswers($user_email='',$search='', $ans1='',$ans2='',$ans3='')
+    public function ValidateSecAnswers($user_email='',$search='', $ans1='',$ans2='',$ans3='')
     {
         if($user_email=='')$data['user_email'] = $this->input->post('user_email');
         if($search=='')$data['search'] = $this->input->post('search');
@@ -406,7 +407,7 @@ class Authentication extends BaseController
             print 'EMPTY';
     }
 
-    function GenerarLinkTemporal($idusuario)
+    public function GenerarLinkTemporal($idusuario)
     {
         $cadena = $idusuario.rand(1,9999999).date('Y-m-d');
         $token = md5(md5(md5($cadena)));
@@ -417,7 +418,7 @@ class Authentication extends BaseController
         return $result;
     }
 
-    function Restore($token='')
+    public function Restore($token='')
     {
         $data['token']=$token;//print $token;die();
 
@@ -437,7 +438,7 @@ class Authentication extends BaseController
         }
     }
 
-    function Activate($token='', $email='')
+    public function Activate($token='', $email='')
     {
         $data['section_auth'] = '/authentication/Login.php';
 		$data['token']=$token;//print $token;die();
@@ -465,7 +466,7 @@ class Authentication extends BaseController
 		$this->load->view('dashboard/Dashboard', $data);
     }
 
-    function SaveNewPass()
+    public function SaveNewPass()
     {
         $data=array(
             'pass'=>password_hash($this->input->post('txt_pass'), PASSWORD_DEFAULT),
@@ -486,13 +487,13 @@ class Authentication extends BaseController
             print $result['error_msg'];
     }
 
-    function GoForgotUser($email='')
+    public function GoForgotUser($email='')
     {
         $data['email']=$email;
         $this->load->view('authentication/ForgotUser', $data);
     }
 
-    function GoLogin()
+    public function GoLogin()
     {
         $this->load->helper('General_Helper');
         $data['session']=GetSessionVars();
@@ -501,28 +502,28 @@ class Authentication extends BaseController
         $this->load->view('authentication/Login', $data);
     }
 
-    function GoForgotPassword($email='')
+    public function GoForgotPassword($email='')
     {
         $data['email']=$email;
 		$this->load->view('authentication/ForgotPassword', $data);
     }
 
-    function GoResetPassword()
+    public function GoResetPassword()
     {
         $this->load->view('authentication/ResetPassword');
     }
 
-    function GoSignUp()
+    public function GoSignUp()
     {
         $this->load->view('authentication/SignUp');
     }
 
-    function GoRecoverAccount()
+    public function GoRecoverAccount()
     {
         $this->load->view('authentication/RecoverAccount');
     }
 
-    function CheckExistUserID()
+    public function CheckExistUserID()
     {
         $user_id=$this->input->post('user_id');
 
@@ -536,7 +537,7 @@ class Authentication extends BaseController
             echo 'NO_EXIST';
     }
 
-    function CheckExistEmail()
+    public function CheckExistEmail()
     {
         $email=$this->input->post('email');
         $result=$this->Auth->ValidateEmail($email);
@@ -549,7 +550,7 @@ class Authentication extends BaseController
             echo 'NO_EXIST';
     }
 
-    function ResetNewPass()
+    public function ResetNewPass()
     {
         $data=array(
             'newpass'=>password_hash($this->input->post('txt_pass'), PASSWORD_DEFAULT),
@@ -576,7 +577,7 @@ class Authentication extends BaseController
             print 'Your username is wrong.';
     }
 
-    function Logout()
+    public function Logout()
     {
         if($this->session->userdata('logged_user_ehhs'))
         {

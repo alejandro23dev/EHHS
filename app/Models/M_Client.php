@@ -11,7 +11,7 @@ Class M_Client extends Model
         parent::__construct();
     }
 
-    function Result($error_code=0, $error_msg=0, $result='')
+    public function Result($error_code=0, $error_msg=0, $result='')
     {
         $return['error_code']=$error_code;
         $return['error_msg']=$error_msg;
@@ -20,7 +20,7 @@ Class M_Client extends Model
         return $return;
     }
 
-    function GetAllClients()
+    public function GetAllClients()
     {
         $this -> db -> select('*');
         $this -> db -> from('user');
@@ -38,7 +38,7 @@ Class M_Client extends Model
         return $return;
     }
 
-    function GetAllActiveClients()
+    public function GetAllActiveClients()
     {
         $this -> db -> select('*');
         $this -> db -> from('client');
@@ -57,7 +57,7 @@ Class M_Client extends Model
         return $return;
     }
 
-    function GetClientByPersonID($id_person)
+    public function GetClientByPersonID($id_person)
     {
         $this -> db -> select('*');
         $this -> db -> from('client');

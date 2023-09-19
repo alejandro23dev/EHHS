@@ -2,17 +2,26 @@
 
 namespace App\Controllers;
 
- if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+use App\Models\M_Main;
+use App\Models\M_Job;
+use App\Models\M_User;
+use App\Models\M_Care;
+use App\Models\M_Client;
+use App\Models\M_Employee;
 
 class Main extends BaseController
 {
     function  __construct()
     {
         parent::__construct();
-        $this->load->model('M_Main');
+        $this->MainModel = new M_Main;
+        $this->JobModel = new M_Job;
+        $this->ClientModel = new M_Client;
+        $this->UserModel = new M_User;
+        $this->CareModel = new M_Care;
     }
 
-    function index($view="Main", $msg="", $success="", $warning="", $error="")
+    public function index($view="Main", $msg="", $success="", $warning="", $error="")
 	{
         $data['msg']=$msg;
         $data['success']=$success;
@@ -26,19 +35,19 @@ class Main extends BaseController
 		$data['param2']=$this->input->get('p2');
 		$data['view_area']=$this->input->get('v');
 
-        $this->load->helper('General_Helper');
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
 
-		$this->load->view("Main", $data);
+		return view("Main", $data);
 	}
 
-    function LlenarDataTable()
+    public function LlenarDataTable()
     {
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session']=GetSessionVars();
             $data['language']=LoadLanguage();
             $data['profile_type']=ProfileType($data['session']);
@@ -66,14 +75,21 @@ class Main extends BaseController
         }
     }
 
-    function GetData($data_type='')
+    public function GetData($data_type='')
     {
+        $MainModel = new M_Main;
+        $UserModel = new M_User;
+        $ClientModel = new M_Client;
+        $EmployeeModel = new M_Employee;
+        $CareModel = new M_Care;
+        $JobModel = new M_Job;
+        
         if($this->session->userdata('logged_user_ehhs'))
         {
             $result='';
 			date_default_timezone_set('America/New_York');
 
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session']=GetSessionVars();
             $data['language']=LoadLanguage();
             $data['profile_type']=ProfileType($data['session']);
@@ -84,8 +100,8 @@ class Main extends BaseController
 
                 if($result['id_user']!='')
                 {
-                    $this->load->model('M_User');
-                    $result['user'] = $this->M_User->GetAccountUserByUserID($result['id_user']);
+                    $UserModel = new M_User;
+                    $result['user'] = $UserModel->GetAccountUserByUserID($result['id_user']);
                 }
                 else
                 {
@@ -99,9 +115,9 @@ class Main extends BaseController
 
                 if($result['id_user']!='')
                 {
-                    $this->load->model('M_User');
-                    $result['role'] = $this->M_User->GetRoleByUserID($result['id_user']);
-                    $result['profile'] = $this->M_User->GetProfileUserByUserID($result['id_user']);
+                    $UserModel = new M_User;
+                    $result['role'] = $UserModel->GetRoleByUserID($result['id_user']);
+                    $result['profile'] = $UserModel->GetProfileUserByUserID($result['id_user']);
                 }
                 else
                 {
@@ -116,186 +132,168 @@ class Main extends BaseController
                 if($result['id_person']=='')
                     $result['id_person']=$data['session']['id_person'];//echo $data['session']['id_person'];die();
 
-                $this->load->model('M_User');
-                $result['role']=$this->M_User->GetRoleByPersonID($result['id_person']);
-                $result['employee']=$this->M_User->GetEmployeeByPersonID($result['id_person']);
-                $result['form']=$this->M_User->GetFormByPersonID($result['id_person'], 'employment');
-                $result['consent']=$this->M_User->GetConsentByPersonID($result['id_person'], 'employment');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByPersonID($result['id_person']);//var_dump($result['consent']);die();
+                $result['role']=$UserModel->GetRoleByPersonID($result['id_person']);
+                $result['employee']=$UserModel->GetEmployeeByPersonID($result['id_person']);
+                $result['form']=$UserModel->GetFormByPersonID($result['id_person'], 'employment');
+                $result['consent']=$UserModel->GetConsentByPersonID($result['id_person'], 'employment');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByPersonID($result['id_person']);//var_dump($result['consent']);die();
             }
             elseif($data_type==='data_probation')
             {
-				$this->load->model('M_User');
 				$result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'probation');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'probation');//var_dump($result['consent']);die();
-				$result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'probation');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'probation');//var_dump($result['consent']);die();
+				$result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
                 $result['business_date']=$this->GetBusinessDate(date('m/d/Y'), 5);
             }
 			elseif($data_type==='data_statement')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'statement');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'statement');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'statement');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'statement');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_equipment')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'equipment');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'equipment');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'equipment');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'equipment');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_medical')
             {
-                $this->load->model('M_User');
+                
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'medical');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'medical');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'medical');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'medical');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_orientation')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'orientation');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'orientation');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'orientation');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'orientation');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_tax')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'tax');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'tax');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'tax');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'tax');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_inservice')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'inservice');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'inservice');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'inservice');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'inservice');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_over')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'over');
-                $result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'over');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'over');
+                $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'over');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_emergency')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'emergency');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'emergency');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_confidentiality')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'confidentiality');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'confidentiality');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_agreement')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'agreement');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'agreement');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_affidavit')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'affidavit');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'affidavit');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_comunicado')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'comunicado');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'comunicado');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_references')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'references');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'references');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
 			elseif($data_type==='data_quiz')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'quiz');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'quiz');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_i9')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'i9');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'i9');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_w9')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'w9');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'w9');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);
             }
             elseif($data_type==='data_upload')
             {
-                $this->load->model('M_User');
                 $result['id_employee']=$this->input->post('id_employee');
-                $result['role']=$this->M_User->GetRoleByEmployeeID($result['id_employee']);
-                $result['form']=$this->M_User->GetFormByEmployeeID($result['id_employee'], 'upload');
-                //$result['consent']=$this->M_User->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
-                $result['completed_percent']=$this->M_Main->GetCompletedPercentByEmployeeID($result['id_employee']);//var_dump($result['completed_percent']);die();
+                $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
+                $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'upload');
+                //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
+                $result['completed_percent']=$MainModel->GetCompletedPercentByEmployeeID($result['id_employee']);//var_dump($result['completed_percent']);die();
             }
 
             elseif($data_type==='data_list_employee')
             {
-                $this->load->model('M_Employee');
-                $result['employee']=$this->M_Employee->GetAllWorkers();
+                
+                $result['employee']=$EmployeeModel->GetAllWorkers();
             }
             elseif($data_type==='data_list_client')
             {
-                $this->load->model('M_Client');
-                $result['client']=$this->M_Client->GetAllClients();
+                
+                $result['client']=$ClientModel->GetAllClients();
             }
             elseif($data_type==='data_client_preference')
             {
@@ -304,44 +302,40 @@ class Main extends BaseController
                 if($result['id_person']=='')
                     $result['id_person']=$data['session']['id_person'];
 
-                $this->load->model('M_Client');
-                $this->load->model('M_Employee');
-                $result['client']=$this->M_Client->GetClientByPersonID($result['id_person']);
-                $result['approved_employee']=$this->M_Employee->GetWorkerByApproved(1);
+                $result['client']=$ClientModel->GetClientByPersonID($result['id_person']);
+                $result['approved_employee']=$EmployeeModel->GetWorkerByApproved(1);
             }
             elseif($data_type==='data_list_care')
             {
                 $result['id_client']=$this->input->post('id_client');
                 $result['show_client']=$this->input->post('show_client');
 
-                $this->load->model('M_Care');
                 if(isset($result['id_client']) && $result['id_client']!='')
-                    $result['care']=$this->M_Care->GetCareByClientID($result['id_client']);
+                    $result['care']=$CareModel->GetCareByClientID($result['id_client']);
                 else
-                    $result['care']=$this->M_Care->GetAllCares();
+                    $result['care']=$CareModel->GetAllCares();
             }
             elseif($data_type==='data_list_assigned_job')
             {
                 $result['id_employee']=$this->input->post('id_employee');
                 $result['show_employee']=$this->input->post('show_employee');
 
-                $this->load->model('M_Job');
+
                 if(isset($result['id_employee']) && $result['id_employee']!='')
-                    $result['job']=$this->M_Job->GetAssignedJobByEmployeeID($result['id_employee']);//return the assigned jobs
+                    $result['job']=$JobModel->GetAssignedJobByEmployeeID($result['id_employee']);//return the assigned jobs
                 else
-                    $result['job']=$this->M_Job->GetAllAssignedJobs();//return all jobs, assigned and availables
+                    $result['job']=$JobModel->GetAllAssignedJobs();//return all jobs, assigned and availables
             }
             elseif($data_type==='data_list_available_job')
             {
                 $result['show_client']=$this->input->post('show_client');
 
-                $this->load->model('M_Care');
-                $result['care']=$this->M_Care->GetAvailableCare();
+                $result['care']=$CareModel->GetAvailableCare();
 
                 if($data['session']['rol']=='worker')
                 {
-                    $this->load->model('M_User');
-                    $employee=$this->M_User->GetEmployeeByPersonID($data['session']['id_person']);//var_dump($result['employee']);
+                    
+                    $employee=$UserModel->GetEmployeeByPersonID($data['session']['id_person']);//var_dump($result['employee']);
 
                     if($employee['error_code']=='0')
                     {
@@ -351,7 +345,7 @@ class Main extends BaseController
                 }
                 elseif($data['session']['rol']=='asist')
                 {
-                    $this->load->model('M_Job');
+                    
 
                 }
 
@@ -360,8 +354,8 @@ class Main extends BaseController
             {
                 $id_care_schedule = $this->input->post('id_care_schedule');
 
-                $this->load->model('M_Job');
-                $result['interested_employee']=$this->M_Job->GetInterestedEmployeeByCareScheduleID($id_care_schedule);
+                
+                $result['interested_employee']=$JobModel->GetInterestedEmployeeByCareScheduleID($id_care_schedule);
             }
 
             $print=$this->input->post('print');
@@ -378,7 +372,7 @@ class Main extends BaseController
         }
     }
 	
-	function GetBusinessDate($startdate, $numberofdays)
+	public function GetBusinessDate($startdate, $numberofdays)
 	{
 		//$_POST['startdate'] = '2012-08-14';
 		//$_POST['numberofdays'] = 10;
@@ -409,7 +403,7 @@ class Main extends BaseController
 		return $d->format( 'm/d/Y' );
 	}
 
-    function GoView($view='', $msg="", $success="", $warning="", $error="")
+    public function GoView($view='', $msg="", $success="", $warning="", $error="")
     {
         $data['msg']=$msg;
         $data['success']=$success;
@@ -417,20 +411,20 @@ class Main extends BaseController
         $data['error']=$error;
         $data['view']=str_replace("-","/",$view);
 
-        $this->load->helper('General_Helper');
+        $this->load->helper('general_helper');
         $data['session'] = GetSessionVars();//die();
         $data['language'] = LoadLanguage();
         $data['profile_type'] = ProfileType($data['session']);
 
         if ($data['view'] != '')
-            $this->load->view($data['view'], $data);
+            return view($data['view'], $data);
     }
 
-    function GoObject()
+    public function GoObject()
     {
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
@@ -440,7 +434,7 @@ class Main extends BaseController
             $data['id'] = $this->input->post('id');
 
             if ($data['go_view'] != '')
-                $this->load->view($data['go_view'], $data);
+                return view($data['go_view'], $data);
         }
         else
         {
@@ -448,18 +442,20 @@ class Main extends BaseController
         }
     }
 
-    function GoObject1111111()
+    public function GoObject1111111()
     {
         $data['ctr']=$this->input->get('c');
         $data['func']=$this->input->get('f');
         $data['param1']=$this->input->get('p1');
         $data['view_area']=$this->input->get('v');
 
-        $this->load->view("Main", $data);
+        return view("Main", $data);
     }
 
-    function SaveObject()
+    public function SaveObject()
     {
+        $MainModel = new M_Main;
+
         $field_id='';
 
         if($this->session->userdata('logged_user_ehhs'))
@@ -486,7 +482,7 @@ class Main extends BaseController
             }
             //print $table;die();
 
-            $result=$this->M_Main->Execute($type, $fields, $datas, $table, $field_id);
+            $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
 
             if($result['error_msg']=='0' && $type=='INSERT')
                 print $result['data']['last_id'];
@@ -501,8 +497,9 @@ class Main extends BaseController
         }
     }
 
-    function SaveObjectWoutLogged()
+    public function SaveObjectWoutLogged()
     {
+        $MainModel = new M_Main;
         $i=0;
         foreach($_POST as $field_name => $value)
         {
@@ -520,19 +517,20 @@ class Main extends BaseController
             elseif($field_name=='type')
                 $type=$value;
         }
-        $result=$this->M_Main->Execute($type, $fields, $datas, $table);
+        $result=$MainModel->Execute($type, $fields, $datas, $table);
         print $result['error_msg'];
     }
 
-    function DeleteObject()
+    public function DeleteObject()
     {
+        $MainModel = new M_Main;
         if($this->session->userdata('logged_user_ehhs'))
         {
             $tables = $this->input->post('table');
             $field_ids = $this->input->post('field_id');
             $data['ids'] = $this->input->post('id');
 
-            //print 'lays: '.$tables.' ids: '.$data['ids'].' ctr_function: '.$ctr_function;die();
+            //print 'lays: '.$tables.' ids: '.$data['ids'].' ctr_public function: '.$ctr_public function;die();
 
             $var = explode("-", $tables);
             $var1 = explode("-", $field_ids);
@@ -549,7 +547,7 @@ class Main extends BaseController
                     if (isset($data['ids']))
                     {
 
-                        $result=$this->M_Main->Execute('DELETE', '', $data, $table, $field_id);
+                        $result=$MainModel->Execute('DELETE', '', $data, $table, $field_id);
                         print $result['error_msg'];
                     }
                     else
@@ -569,7 +567,7 @@ class Main extends BaseController
         }
     }
 
-    function EnviarEmail()
+    public function EnviarEmail()
     {
         $from_email=$_POST['from_email'];
         $from_name=$_POST['from_name'];
@@ -588,12 +586,12 @@ class Main extends BaseController
         print $return;
     }
 
-    function Reminder($id_app='')
+    public function Reminder($id_app='')
     {
         if($id_app)
         {
             $this->load->model('M_Appointment');
-            $result['appointment'] = $this->M_Appointment->GetAppointmentByRecordID($id_app);
+            $result['appointment'] = $AppointmentModel->GetAppointmentByRecordID($id_app);
 
             $email = $result['appointment']['data'][0]['bd_user_email'];
 
@@ -628,20 +626,20 @@ class Main extends BaseController
         }
     }
 
-    function SwitchLanguage($language='')
+    public function SwitchLanguage($language='')
     {
         if($language=='')$language=$this->input->post('language');
 
         $session_lang = array('lang' => $language);
         $this->session->set_userdata('language', $session_lang);
 
-        $this->load->helper('General_Helper');
+        $this->load->helper('general_helper');
         LoadLanguage();
     }
 
-    function RebuildHeader()
+    public function RebuildHeader()
     {
-        $this->load->helper('General_Helper');
+        $this->load->helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
@@ -650,7 +648,7 @@ class Main extends BaseController
         $this->load->view('includes/nav_bar', $data);
     }
 
-    function DownloadFile()
+    public function DownloadFile()
     {
         $src=$this->input->get('sub_folder');
 

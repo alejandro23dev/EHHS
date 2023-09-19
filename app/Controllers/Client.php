@@ -2,21 +2,24 @@
 
 namespace App\Controllers;
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models\M_Client;
+use App\Models\M_Employee;
+use App\Models\M_User;
 class Client extends BaseController
 {
     function __construct()
     {
         parent::__construct();
-        //$this->load->model('M_Employee');
+        $this->ClientModel = new M_Client;
+        $this->EmployeeModel = new M_Employee;
+        $this->UserModel = new M_User;
     }
 
-    function GoUpdateClient()
+    public function GoUpdateClient()
     {
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
@@ -31,21 +34,21 @@ class Client extends BaseController
                 $data['id_user'] = $vars[0];
                 $data['id_person'] = $vars[1];
 
-                $this->load->model('M_User');
-                $this->load->model('M_Client');
+                $ClientModel = new M_Client;
+                $UserModel = new M_User;
 
                 if ($data['id_user'] != '')
-                    $data['role'] = $this->M_User->GetRoleByUserID($data['id_user']);
+                    $data['role'] = $UserModel->GetRoleByUserID($data['id_user']);
 
                 if ($data['id_person'] != '')
-                    $data['client'] = $this->M_Client->GetClientByPersonID($data['id_person']);
+                    $data['client'] = $ClientModel->GetClientByPersonID($data['id_person']);
             }
             else
                 $data['role'] = 'patient';
 
 
             if ($data['go_view'] != '')
-                $this->load->view($data['go_view'], $data);
+                return view($data['go_view'], $data);
         }
         else
         {

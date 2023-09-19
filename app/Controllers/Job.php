@@ -2,21 +2,30 @@
 
 namespace App\Controllers;
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models\M_Employee;
+use App\Models\M_Care;
+use App\Models\M_Main;
+use App\Models\M_Job;
 class Job extends BaseController
 {
     function __construct()
     {
         parent::__construct();
-        //$this->load->model('M_Employee');
+        $this->EmployeeModel = new M_Employee;
+        $this->CareModel = new M_Care;
+        $this->MainModel = new M_Main;
+        $this->JobModel = new M_Job;
     }
 
-    function GoAddJob()
+    public function GoAddJob()
     {
+
+        $EmployeeModel = new M_Employee;
+        $CareModel = new M_Care;
+
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('General_Helper');
+            $this->load->helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
@@ -26,14 +35,12 @@ class Job extends BaseController
 
             $data['id_employee']=$this->input->post('id_employee');
 
-            $this->load->model('M_Employee');
-            $this->load->model('M_Care');
-            $data['worker']=$this->M_Employee->GetAllApprovedWorkers();
+            $data['worker']=$EmployeeModel->GetAllApprovedWorkers();
             //$data['data']['care']=$this->M_Care->GetAvailableCare();//var_dump($data['available_job']);die();
             //$data['data']['show_client']=1;
 
             if ($data['go_view'] != '')
-                $this->load->view($data['go_view'], $data);
+                return view($data['go_view'], $data);
         }
         else
         {
@@ -41,11 +48,12 @@ class Job extends BaseController
         }
     }
 
-    function SaveJob()
+    public function SaveJob()
     {
+        $MainModel = new M_Main;
+
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->model('M_Main');
             $i=0;
             foreach($_POST as $field_name => $value)
             {
@@ -76,7 +84,7 @@ class Job extends BaseController
 
                     if (isset($datas['id_care_schedule']))
                     {
-                        $result=$this->M_Main->Execute($type, $fields, $datas, $table, '');
+                        $result=$MainModel->Execute($type, $fields, $datas, $table, '');
                         if($result['error_msg']=='0' && $type=='INSERT')
                             print $result['data']['last_id'];
                         elseif($result['error_msg']=='0' && $type=='UPDATE')
@@ -101,11 +109,12 @@ class Job extends BaseController
         }
     }
 
-    function SaveInterestedOrNotJob()
+    public function SaveInterestedOrNotJob()
     {
+        $MainModel = new M_Main;
+        $JobModel = new M_Job;
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->model('M_Main');
             $i=0;
             foreach($_POST as $field_name => $value)
             {
@@ -139,11 +148,10 @@ class Job extends BaseController
                         $id_employee=$datas['id_employee'];
                         $id_care_schedule=$datas['id_care_schedule'];
 
-                        $this->load->model('M_Job');
-                        $interest_result=$this->M_Job->GetInterestedJobsByEmployeeIDCareScheduleID($id_employee, $id_care_schedule);
+                        $interest_result=$JobModel->GetInterestedJobsByEmployeeIDCareScheduleID($id_employee, $id_care_schedule);
                         if($interest_result['error_code']==1)
                         {
-                            $result=$this->M_Main->Execute($type, $fields, $datas, $table, '');
+                            $result=$MainModel->Execute($type, $fields, $datas, $table, '');
                             if($result['error_msg']=='0' && $type=='INSERT')
                                 print $result['data']['last_id'];
                             elseif($result['error_msg']=='0' && $type=='UPDATE')
@@ -173,8 +181,9 @@ class Job extends BaseController
         }
     }
 
-    function DeleteInterestedJob()
+    public function DeleteInterestedJob()
     {
+        $JobModel = new M_Job;
         if($this->session->userdata('logged_user_ehhs'))
         {
             $id_employee = $this->input->post('id_employee');
@@ -191,8 +200,7 @@ class Job extends BaseController
 
                     if ($id_employee!='' && $id_care_schedule!='')
                     {
-                        $this->load->model('M_Job');
-                        $result=$this->M_Job->DeleteInterestedJob($id_employee, $id_care_schedule);
+                        $result=$JobModel->DeleteInterestedJob($id_employee, $id_care_schedule);
                         print $result['error_code'];
                     }
                     else
