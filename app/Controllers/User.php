@@ -8,14 +8,6 @@ use App\Models\M_Main;
 use App\Models\M_Employee;
 class User extends BaseController
 {
-    function  __construct()
-    {
-        parent::__construct();
-        $this->UserModel = new M_User;
-        $this->MainModel = new M_Main;
-        $this->ClientModel = new M_Client;
-        $this->EmployeeModel = new M_Employee;
-    }
 
     public function index($view="user/ListMyProfile", $msg="", $success="", $warning="", $error="")
     {
@@ -30,7 +22,7 @@ class User extends BaseController
 
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session']=GetSessionVars();
             $data['language']=LoadLanguage();
             $data['profile_type']=ProfileType($data['session']);
@@ -164,7 +156,7 @@ class User extends BaseController
 					$this->DeleteFile($random, 'photo_1.jpg', 'NO');
 
 
-					$this->load->helper('general_helper');//print 'id_person: '.$id;
+					helper('general_helper');//print 'id_person: '.$id;
                     UpdateSessionVars('id_person', $id);
 
 					print $id;
@@ -210,7 +202,7 @@ class User extends BaseController
         $UserModel = new M_User;
 
 		header('Content-Type: application/json');
-		$zip=$this->input->post('zip');
+		$zip=$this->request->getPost('zip');
 		$result=$UserModel->GetStateByZIP($zip);
 
 		if($result['error_msg']=='0')
@@ -225,7 +217,7 @@ class User extends BaseController
         $msg = "";
 
         $file = 'multiple_fileupload';
-        $random = $this->input->post('random');
+        $random = $this->request->getPost('random');
 
         if(!file_exists('./assets/upload/temp_photo/'.$random))mkdir('./assets/upload/temp_photo/'.$random);
 
@@ -265,8 +257,8 @@ class User extends BaseController
 
     public function DeleteFile($random_folder='', $name='', $no='')
     {
-        if($name=='')$name = $this->input->post('name');
-        if($random_folder=='')$random_folder = $this->input->post('folder');
+        if($name=='')$name = $this->request->getPost('name');
+        if($random_folder=='')$random_folder = $this->request->getPost('folder');
 
         $folder="./assets/upload/temp_photo/".$random_folder;
 
@@ -306,7 +298,7 @@ class User extends BaseController
                     $user_type=$value;
             }
 
-            $data['ids'] = $this->input->post('id');
+            $data['ids'] = $this->request->getPost('id');
             $var = explode("-", $data['ids']);
 
             if(sizeof($var) != 0)
@@ -322,14 +314,14 @@ class User extends BaseController
                         $result=$MainModel->Execute($type, $fields, $datas, $table, $field_id);
                         if($result['error_code']=='0')
                         {
-                            if($user_type=='patient' && $this->input->post('status')=='0')
+                            if($user_type=='patient' && $this->request->getPost('status')=='0')
                             {
                                 $result=$UserModel->GetClientByUserID($datas['id']);
 
                                 $table_c='care_schedule';
                                 $datas_c['id']=$result['data']->id_client;
                                 $field_id_c='id_client';
-                                $datas_c['approved'] = $this->input->post('status');
+                                $datas_c['approved'] = $this->request->getPost('status');
                                 $fields_c[0]='approved';
 
                                 $result=$MainModel->Execute($type, $fields_c, $datas_c, $table_c, $field_id_c);
@@ -338,7 +330,7 @@ class User extends BaseController
                                     print $datas['id'];//die();
 
                             }
-                            elseif ($user_type=='employee' && $this->input->post('status')=='0')
+                            elseif ($user_type=='employee' && $this->request->getPost('status')=='0')
                             {
                                 $EmployeeModel = new M_Employee;
                                 $result=$EmployeeModel->GetEmployeeByUserID($datas['id']);//var_dump($result);
@@ -346,7 +338,7 @@ class User extends BaseController
                                 $table_e='employee_care';
                                 $datas_e['id']=$result['data'][0]->id_employee;
                                 $field_id_e='id_employee';
-                                $datas_e['status'] = $this->input->post('status');
+                                $datas_e['status'] = $this->request->getPost('status');
                                 $fields_e[0]='status';
 
                                 $result=$MainModel->Execute($type, $fields_e, $datas_e, $table_e, $field_id_e);

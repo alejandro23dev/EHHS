@@ -6,13 +6,16 @@ use CodeIgniter\Model;
 
 Class M_Dashboard extends Model
 {
+    protected $db;
+    
     function  __construct()
     {
         parent::__construct();
+        $this->db = \Config\Database::connect();
     }
 
 
-    function error($result)
+    public function error($result)
     {
         if (array_key_exists("errorCode", $result) && array_key_exists("errorMessage", $result))
         {
@@ -26,7 +29,7 @@ Class M_Dashboard extends Model
             return 0;
     }
 
-    function GetAppointment($next, $id_doctor)
+    public function GetAppointment($next, $id_doctor)
     {
         $table='PHP_Appointment';
         $request1['ProviderRec'] = $id_doctor;
@@ -79,7 +82,7 @@ Class M_Dashboard extends Model
         return $return;
     }
 
-    function GetAppointmentBy($id_service, $id_doctor, $date, $time)
+    public function GetAppointmentBy($id_service, $id_doctor, $date, $time)
     {
         $table='PHP_Appointment';
 
@@ -114,7 +117,7 @@ Class M_Dashboard extends Model
         return $return;
     }
 
-    function GetAppointmentSettings($id_service, $id_doctor)
+    public function GetAppointmentSettings($id_service, $id_doctor)
     {
         $table='PHP_Service_Doctor';
 
@@ -153,7 +156,7 @@ Class M_Dashboard extends Model
         return $return;
     }
 
-    function ValidaTokenApp($token)
+    public function ValidaTokenApp($token)
     {
         $table='PHP_Appointment';
 

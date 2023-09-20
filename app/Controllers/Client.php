@@ -7,30 +7,23 @@ use App\Models\M_Employee;
 use App\Models\M_User;
 class Client extends BaseController
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->ClientModel = new M_Client;
-        $this->EmployeeModel = new M_Employee;
-        $this->UserModel = new M_User;
-    }
 
     public function GoUpdateClient()
     {
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
 
-            $data['go_view'] = str_replace("-","/", $this->input->post('go_view'));
-            $data['go_back'] = $this->input->post('go_back');
+            $data['go_view'] = str_replace("-","/", $this->request->getPost('go_view'));
+            $data['go_back'] = $this->request->getPost('go_back');
 
 
-            if($this->input->post('id')!='')
+            if($this->request->getPost('id')!='')
             {
-                $vars = explode("-", $this->input->post('id'));
+                $vars = explode("-", $this->request->getPost('id'));
                 $data['id_user'] = $vars[0];
                 $data['id_person'] = $vars[1];
 

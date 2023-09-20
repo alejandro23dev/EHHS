@@ -8,14 +8,6 @@ use App\Models\M_Main;
 use App\Models\M_Job;
 class Job extends BaseController
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->EmployeeModel = new M_Employee;
-        $this->CareModel = new M_Care;
-        $this->MainModel = new M_Main;
-        $this->JobModel = new M_Job;
-    }
 
     public function GoAddJob()
     {
@@ -25,15 +17,15 @@ class Job extends BaseController
 
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
 
             $data['go_view'] = 'job/AddJob';
-            $data['go_back'] = $this->input->post('go_back');
+            $data['go_back'] = $this->request->getPost('go_back');
 
-            $data['id_employee']=$this->input->post('id_employee');
+            $data['id_employee']=$this->request->getPost('id_employee');
 
             $data['worker']=$EmployeeModel->GetAllApprovedWorkers();
             //$data['data']['care']=$this->M_Care->GetAvailableCare();//var_dump($data['available_job']);die();
@@ -71,7 +63,7 @@ class Job extends BaseController
                     $type=$value;
             }
             $fields[$i] = 'id_care_schedule';
-            $data['ids'] = $this->input->post('id');
+            $data['ids'] = $this->request->getPost('id');
             $var = explode("-", $data['ids']);
 
             if(sizeof($var) != 0)
@@ -132,7 +124,7 @@ class Job extends BaseController
                     $type=$value;
             }
             $fields[$i] = 'id_care_schedule';
-            $data['ids'] = $this->input->post('id');
+            $data['ids'] = $this->request->getPost('id');
             $var = explode("-", $data['ids']);
 
             if(sizeof($var) != 0)
@@ -186,8 +178,8 @@ class Job extends BaseController
         $JobModel = new M_Job;
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $id_employee = $this->input->post('id_employee');
-            $ids = $this->input->post('id');
+            $id_employee = $this->request->getPost('id_employee');
+            $ids = $this->request->getPost('id');
             $var = explode("-", $ids);
 
             if(sizeof($var) != 0)

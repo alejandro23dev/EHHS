@@ -8,13 +8,6 @@ use App\Models\M_Employee;
 
 class Dashboard extends BaseController
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->DashboardModel = new M_Dashboard;
-        $this->EmployeeModel = new M_Employee;
-        $this->CareModel = new M_Care;
-    }
 
     public function GoDashboard($view = "dashboard/Dashboard", $msg = "", $success = "", $warning = "", $error = "")
     {
@@ -24,7 +17,7 @@ class Dashboard extends BaseController
         $data['error'] = $error;
         $data['view'] = $view;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session'] = GetSessionVars();
         $data['language'] = LoadLanguage();
         $data['profile_type'] = ProfileType($data['session']);
@@ -57,7 +50,7 @@ class Dashboard extends BaseController
         $data['error'] = $error;
         $data['view'] = $view;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session'] = GetSessionVars();
         $data['language'] = LoadLanguage();
         $data['profile_type'] = ProfileType($data['session']);

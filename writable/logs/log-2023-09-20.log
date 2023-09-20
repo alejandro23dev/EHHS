@@ -1,0 +1,415 @@
+CRITICAL - 2023-09-20 08:44:43 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:44:49 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:45:20 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:45:47 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:38 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:38 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:38 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:39 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:39 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:39 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:39 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:39 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:40 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:40 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:54:42 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:47 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:47 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:47 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:59 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:59 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:59 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:55:59 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:56:11 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:56:12 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:56:48 --> Undefined property: App\Controllers\Main::$input
+in APPPATH\Controllers\Main.php on line 31.
+ 1 APPPATH\Controllers\Main.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\Main::$input', 'C:\\wamp64\\www\\EHHS\\app\\Controllers\\Main.php', 31, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:56:48 --> Undefined property: App\Controllers\Main::$input
+in APPPATH\Controllers\Main.php on line 31.
+ 1 APPPATH\Controllers\Main.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\Main::$input', 'C:\\wamp64\\www\\EHHS\\app\\Controllers\\Main.php', 31, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 08:56:49 --> Undefined property: App\Controllers\Main::$input
+in APPPATH\Controllers\Main.php on line 31.
+ 1 APPPATH\Controllers\Main.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\Main::$input', 'C:\\wamp64\\www\\EHHS\\app\\Controllers\\Main.php', 31, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:06:25 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Main.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:06:26 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Main.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:43:43 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:43:44 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:49:44 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:49:44 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:49:44 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:49:45 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:49:45 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:52:21 --> Call to undefined function App\Controllers\GetSessionVars()
+in APPPATH\Controllers\Main.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:52:22 --> Call to undefined function App\Controllers\GetSessionVars()
+in APPPATH\Controllers\Main.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:52:23 --> Call to undefined function App\Controllers\GetSessionVars()
+in APPPATH\Controllers\Main.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:09 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:21 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:22 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:23 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:23 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:23 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:31 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): require_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): require_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:32 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): require_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): require_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:54:32 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): require_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): require_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:40 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:41 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:41 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:41 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:41 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:42 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 10:56:42 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 11:06:04 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 11:06:05 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 11:06:05 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 11:06:05 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 11:06:05 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

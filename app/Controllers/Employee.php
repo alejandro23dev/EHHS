@@ -7,13 +7,6 @@ use App\Models\M_Employee;
 use App\Models\M_User;
 class Employee extends BaseController
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->UserModel = new M_User;
-        $this->EmployeeModel = new M_Employee;
-        $this->MainModel = new M_Main;
-    }
 
 	public function SaveEmployment()
     {
@@ -23,23 +16,23 @@ class Employee extends BaseController
         $field_id='';
         $existing_completed_percent=0;
 
-        $consent_name1=$this->input->post('consent_name1');
-        $consent_name2=$this->input->post('consent_name2');
-        $consent_name3=$this->input->post('consent_name3');
-        $sign1=$this->input->post('sign1');
-        $sign2=$this->input->post('sign2');
-        $sign3=$this->input->post('sign3');
-        $id_consent1=$this->input->post('id_consent1');
-        $id_consent2=$this->input->post('id_consent2');
-        $id_consent3=$this->input->post('id_consent3');
+        $consent_name1=$this->request->getPost('consent_name1');
+        $consent_name2=$this->request->getPost('consent_name2');
+        $consent_name3=$this->request->getPost('consent_name3');
+        $sign1=$this->request->getPost('sign1');
+        $sign2=$this->request->getPost('sign2');
+        $sign3=$this->request->getPost('sign3');
+        $id_consent1=$this->request->getPost('id_consent1');
+        $id_consent2=$this->request->getPost('id_consent2');
+        $id_consent3=$this->request->getPost('id_consent3');
 
-        $id_person=$this->input->post('id_person');
-        $id_employee=$this->input->post('id_employee');
-        $id_form=$this->input->post('id_form');
-        $completed_percent=$this->input->post('completed_percent');
+        $id_person=$this->request->getPost('id_person');
+        $id_employee=$this->request->getPost('id_employee');
+        $id_form=$this->request->getPost('id_form');
+        $completed_percent=$this->request->getPost('completed_percent');
 
-        $form_name=$this->input->post('form_name');
-        $form_sign=$this->input->post('form_sign');
+        $form_name=$this->request->getPost('form_name');
+        $form_sign=$this->request->getPost('form_sign');
         $date=date('Y-m-d');
 
 
@@ -218,27 +211,27 @@ class Employee extends BaseController
 
         $MainModel = new M_Main;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
 
-        $consent_name1=$this->input->post('consent_name1');
-        $consent_name2=$this->input->post('consent_name2');
-        $consent_name3=$this->input->post('consent_name3');
-        $sign1=$this->input->post('sign1');
-        $sign2=$this->input->post('sign2');
-        $sign3=$this->input->post('sign3');
-        $id_consent1=$this->input->post('id_consent1');
-        $id_consent2=$this->input->post('id_consent2');
-        $id_consent3=$this->input->post('id_consent3');
+        $consent_name1=$this->request->getPost('consent_name1');
+        $consent_name2=$this->request->getPost('consent_name2');
+        $consent_name3=$this->request->getPost('consent_name3');
+        $sign1=$this->request->getPost('sign1');
+        $sign2=$this->request->getPost('sign2');
+        $sign3=$this->request->getPost('sign3');
+        $id_consent1=$this->request->getPost('id_consent1');
+        $id_consent2=$this->request->getPost('id_consent2');
+        $id_consent3=$this->request->getPost('id_consent3');
 
-        $id_employee=$this->input->post('id_employee');
-        $id_form=$this->input->post('id_form');
-        $completed_percent=$this->input->post('completed_percent');
+        $id_employee=$this->request->getPost('id_employee');
+        $id_form=$this->request->getPost('id_form');
+        $completed_percent=$this->request->getPost('completed_percent');
 
-        $form_name=$this->input->post('form_name');
-        $form_sign=$this->input->post('form_sign');
+        $form_name=$this->request->getPost('form_name');
+        $form_sign=$this->request->getPost('form_sign');
         $date=date('Y-m-d');
 
         //--------------EMPLOYEE---------------
@@ -404,17 +397,17 @@ class Employee extends BaseController
     {
         $MainModel = new M_Main;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
 
-        $id_employee=$this->input->post('id_employee');
-        $id_form=$this->input->post('id_form');
-        $completed_percent=$this->input->post('completed_percent');
+        $id_employee=$this->request->getPost('id_employee');
+        $id_form=$this->request->getPost('id_form');
+        $completed_percent=$this->request->getPost('completed_percent');
 
-        $form_name=$this->input->post('form_name');
-        $form_sign=$this->input->post('form_sign');//print $form_sign;
+        $form_name=$this->request->getPost('form_name');
+        $form_sign=$this->request->getPost('form_sign');//print $form_sign;
         $date=date('Y-m-d');
 
         //--------------EMPLOYEE---------------
@@ -484,41 +477,41 @@ class Employee extends BaseController
     {
         $MainModel = new M_Main;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
 
-        $consent_name1=$this->input->post('consent_name1');
-        $consent_name2=$this->input->post('consent_name2');
-        $consent_name3=$this->input->post('consent_name3');
-        $sign1=$this->input->post('sign1');
-        $sign2=$this->input->post('sign2');
-        $sign3=$this->input->post('sign3');
-        $id_consent1=$this->input->post('id_consent1');
-        $id_consent2=$this->input->post('id_consent2');
-        $id_consent3=$this->input->post('id_consent3');
+        $consent_name1=$this->request->getPost('consent_name1');
+        $consent_name2=$this->request->getPost('consent_name2');
+        $consent_name3=$this->request->getPost('consent_name3');
+        $sign1=$this->request->getPost('sign1');
+        $sign2=$this->request->getPost('sign2');
+        $sign3=$this->request->getPost('sign3');
+        $id_consent1=$this->request->getPost('id_consent1');
+        $id_consent2=$this->request->getPost('id_consent2');
+        $id_consent3=$this->request->getPost('id_consent3');
 
-        $consent_name4=$this->input->post('medical_radio_hep');
-        $sign4=$this->input->post('medical_rbt_hep');
-        $id_consent4=$this->input->post('id_medical_radio_hep');
+        $consent_name4=$this->request->getPost('medical_radio_hep');
+        $sign4=$this->request->getPost('medical_rbt_hep');
+        $id_consent4=$this->request->getPost('id_medical_radio_hep');
 
-        $consent_name7=$this->input->post('label_name1');
-        $consent_name8=$this->input->post('label_name2');
-        $consent_name9=$this->input->post('label_name3');
-        $sign7=$this->input->post('data1');
-        $sign8=$this->input->post('data2');
-        $sign9=$this->input->post('data3');
-        $id_consent7=$this->input->post('id_consent_lb1');
-        $id_consent8=$this->input->post('id_consent_lb2');
-        $id_consent9=$this->input->post('id_consent_lb3');
+        $consent_name7=$this->request->getPost('label_name1');
+        $consent_name8=$this->request->getPost('label_name2');
+        $consent_name9=$this->request->getPost('label_name3');
+        $sign7=$this->request->getPost('data1');
+        $sign8=$this->request->getPost('data2');
+        $sign9=$this->request->getPost('data3');
+        $id_consent7=$this->request->getPost('id_consent_lb1');
+        $id_consent8=$this->request->getPost('id_consent_lb2');
+        $id_consent9=$this->request->getPost('id_consent_lb3');
 
-        $id_employee=$this->input->post('id_employee');
-        $id_form=$this->input->post('id_form');
-        $completed_percent=$this->input->post('completed_percent');
+        $id_employee=$this->request->getPost('id_employee');
+        $id_form=$this->request->getPost('id_form');
+        $completed_percent=$this->request->getPost('completed_percent');
 
-        $form_name=$this->input->post('form_name');
-        $form_sign=$this->input->post('form_sign');
+        $form_name=$this->request->getPost('form_name');
+        $form_sign=$this->request->getPost('form_sign');
         $date=date('Y-m-d');
 
         //--------------EMPLOYEE---------------
@@ -795,30 +788,30 @@ class Employee extends BaseController
 
         $MainModel = new M_Main;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
 
-        $consent_name1=$this->input->post('consent_name1');
-        $consent_name2=$this->input->post('consent_name2');
+        $consent_name1=$this->request->getPost('consent_name1');
+        $consent_name2=$this->request->getPost('consent_name2');
 
-        $consent_name3=$this->input->post('rbt_name1');
+        $consent_name3=$this->request->getPost('rbt_name1');
 
-        $sign1=$this->input->post('sign1');
-        $sign2=$this->input->post('sign2');
+        $sign1=$this->request->getPost('sign1');
+        $sign2=$this->request->getPost('sign2');
 
-        $sign3=$this->input->post('rbt1');
+        $sign3=$this->request->getPost('rbt1');
 
-        $id_consent1=$this->input->post('id_consent1');
-        $id_consent2=$this->input->post('id_consent2');
+        $id_consent1=$this->request->getPost('id_consent1');
+        $id_consent2=$this->request->getPost('id_consent2');
 
-        $id_consent3=$this->input->post('id_consent_rbt1');
+        $id_consent3=$this->request->getPost('id_consent_rbt1');
 
-        $id_employee=$this->input->post('id_employee');
-        $id_form=$this->input->post('id_form');
-        $completed_percent=$this->input->post('completed_percent');
+        $id_employee=$this->request->getPost('id_employee');
+        $id_form=$this->request->getPost('id_form');
+        $completed_percent=$this->request->getPost('completed_percent');
 
-        $form_name=$this->input->post('form_name');
-        $form_sign=$this->input->post('form_sign');
+        $form_name=$this->request->getPost('form_name');
+        $form_sign=$this->request->getPost('form_sign');
         $date=date('Y-m-d');
 
         //--------------EMPLOYEE---------------
@@ -981,9 +974,9 @@ class Employee extends BaseController
 
         for($i=1;$i<=33;$i++)
         {
-            ${"consent_name$i"}=$this->input->post('cbx_name'.$i);
-            ${"sign$i"}=$this->input->post('cbx'.$i);
-            ${"id_consent$i"}=$this->input->post('id_consent_cbx'.$i);
+            ${"consent_name$i"}=$this->request->getPost('cbx_name'.$i);
+            ${"sign$i"}=$this->request->getPost('cbx'.$i);
+            ${"id_consent$i"}=$this->request->getPost('id_consent_cbx'.$i);
 
             $table='consent';
             $fields=array();
@@ -1022,24 +1015,24 @@ class Employee extends BaseController
 
         $MainModel = new M_Main;
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
 
         $field_id='';
 
-        $consent_name1=$this->input->post('consent_name1');
-        $consent_name2=$this->input->post('consent_name2');
-        $sign1=$this->input->post('sign1');
-        $sign2=$this->input->post('sign2');
-        $id_consent1=$this->input->post('id_consent1');
-        $id_consent2=$this->input->post('id_consent2');
+        $consent_name1=$this->request->getPost('consent_name1');
+        $consent_name2=$this->request->getPost('consent_name2');
+        $sign1=$this->request->getPost('sign1');
+        $sign2=$this->request->getPost('sign2');
+        $id_consent1=$this->request->getPost('id_consent1');
+        $id_consent2=$this->request->getPost('id_consent2');
 
-        $id_employee=$this->input->post('id_employee');
-        $id_form=$this->input->post('id_form');
-        $completed_percent=$this->input->post('completed_percent');
+        $id_employee=$this->request->getPost('id_employee');
+        $id_form=$this->request->getPost('id_form');
+        $completed_percent=$this->request->getPost('completed_percent');
 
-        $form_name=$this->input->post('form_name');
-        $form_sign=$this->input->post('form_sign');
+        $form_name=$this->request->getPost('form_name');
+        $form_sign=$this->request->getPost('form_sign');
         $date=date('Y-m-d');
 
         //--------------EMPLOYEE---------------
@@ -1176,15 +1169,15 @@ class Employee extends BaseController
 
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
 
-            $data['go_view'] = str_replace("-","/", $this->input->post('go_view'));
-            $data['go_back'] = $this->input->post('go_back');
+            $data['go_view'] = str_replace("-","/", $this->request->getPost('go_view'));
+            $data['go_back'] = $this->request->getPost('go_back');
 
-            $vars = explode("-", $this->input->post('id'));
+            $vars = explode("-", $this->request->getPost('id'));
             $data['id_user']=$vars[0];
             $data['id_person']=$vars[1];
 
@@ -1226,7 +1219,7 @@ class Employee extends BaseController
                     $field_id=$value;
             }
 
-            $data['ids'] = $this->input->post('id');
+            $data['ids'] = $this->request->getPost('id');
             $var = explode("-", $data['ids']);
 
             if(sizeof($var) != 0)
@@ -1270,8 +1263,8 @@ class Employee extends BaseController
         $msg = "";
 
         $file = 'fileupload_'.$type;
-        //$random = $this->input->post('random');
-        //$random = $this->input->post('random');
+        //$random = $this->request->getPost('random');
+        //$random = $this->request->getPost('random');
 
         if(!file_exists('./assets/upload/temp_files/'.$id_employee))mkdir('./assets/upload/temp_files/'.$id_employee);
 
@@ -1311,8 +1304,8 @@ class Employee extends BaseController
 
     public function DeleteFile($random_folder='', $name='', $no='')
     {
-        if($name=='')$name = $this->input->post('name');
-        if($random_folder=='')$random_folder = $this->input->post('folder');
+        if($name=='')$name = $this->request->getPost('name');
+        if($random_folder=='')$random_folder = $this->request->getPost('folder');
 
         $folder="./assets/upload/temp_files/".$random_folder;
 

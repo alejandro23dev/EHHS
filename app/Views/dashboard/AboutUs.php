@@ -1,7 +1,7 @@
 <!--=== Content Part ===-->
 <div class="container content">
 
-
+<?php echo view('links');?>
     <!-- About Description -->
     <div class="title-box-v2">
         <h2>About <span class="color-green">Esperanza Home Health Services, Inc.</span></h2>

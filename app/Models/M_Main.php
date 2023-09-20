@@ -6,9 +6,12 @@ use CodeIgniter\Model;
 
 Class M_Main extends Model
 {
+    protected $db;
+    
     function __construct()
     {
         parent::__construct();
+        $this->db = \Config\Database::connect();
     }
 
 	public function Result($error_code=0, $error_msg=0, $result='')
@@ -24,12 +27,12 @@ Class M_Main extends Model
 	{
 		$return=array();
 		
-		$this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> where('id_person = ' . "'" . $id_person . "'");
-        $this -> db -> limit(1);
+		$this->select('*');
+        $this->from('employee');
+        $this->where('id_person = ' . "'" . $id_person . "'");
+        $this->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $this->get();//var_dump($query->row());die();
 
         if($query -> num_rows() == 1)
 			$return=$this->Result(0, 0, $query->row());
@@ -41,12 +44,12 @@ Class M_Main extends Model
 
 	public function GetCompletedPercentByEmployeeID($id_employee)
 	{
-		$this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> where('id_employee = ' . "'" . $id_employee . "'");
-        $this -> db -> limit(1);
+		$this->select('*');
+        $this->from('employee');
+        $this->where('id_employee = ' . "'" . $id_employee . "'");
+        $this->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $this->get();//var_dump($query->row());die();
 
         if($query -> num_rows() == 1)
 			$return=$this->Result(0, 0, $query->row());
@@ -69,11 +72,11 @@ Class M_Main extends Model
                     //print $field.' = '.$record[$field].'   ';
                 }
             }
-			$sql = $this->db->set($insert)->get_compiled_insert($table);
+			$sql = $this->set($insert)->get_compiled_insert($table);
 			//echo $sql.'<br>';
 			
-			$this->db->insert($table, $insert);
-			$insert_id['last_id'] = $this->db->insert_id();
+			$this->insert($table, $insert);
+			$insert_id['last_id'] = $this->insert_id();
 			$return=$this->Result(0, 0, $insert_id);
         }
 
@@ -90,8 +93,8 @@ Class M_Main extends Model
                     }
 				}
 
-                $this->db->where($field_id, $datas['id']);
-                $this->db->update($table, $update);
+                $this->where($field_id, $datas['id']);
+                $this->update($table, $update);
 
 				//$this->db->update($table, $update, array($field_id => $datas['id']));print $field_id.' - '.$datas['id'];
                 //echo $this->db->set($update, array($field_id => $datas['id']))->get_compiled_update($table);
@@ -117,7 +120,7 @@ Class M_Main extends Model
                     $id = current($var);//print $id.' - ';
                     $delete=array($field_id => $id);
 
-                    $this->db->delete($table, $delete);
+                    $this->delete($table, $delete);
 
                     if($id_eliminated=='')
                         $id_eliminated=$id;
@@ -138,15 +141,15 @@ Class M_Main extends Model
 		$i=0;
 		$return=array();
 		
-		$this -> db -> select('*');
-        $this -> db -> from('person');
+		$this->select('*');
+        $this->from('person');
 
-        if(isset($data['id_user']) && $data['id_user']!='')$this -> db -> where('id_user = ' . "'" . $data['id_user'] . "'");
-        elseif(isset($data['id_person']) && $data['id_person']!='')$this -> db -> where('id_person = ' . "'" . $data['id_person'] . "'");
+        if(isset($data['id_user']) && $data['id_user']!='')$this->where('id_user = ' . "'" . $data['id_user'] . "'");
+        elseif(isset($data['id_person']) && $data['id_person']!='')$this->where('id_person = ' . "'" . $data['id_person'] . "'");
 
-        $this -> db -> limit(1);
+        $this->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $this->get();//var_dump($query->row());die();
 
         if($query -> num_rows() != 1)
 		{
@@ -162,16 +165,16 @@ Class M_Main extends Model
 		$i=0;
 		$return=array();
 
-		$this -> db -> select('*');
-        $this -> db -> from('person');
-        $this -> db -> join('employee', 'employee.id_person = person.id_person');
+		$this->select('*');
+        $this->from('person');
+        $this->join('employee', 'employee.id_person = person.id_person');
 
-        if(isset($data['id_user']) && $data['id_user']!='')$this -> db -> where('id_user = ' . "'" . $data['id_user'] . "'");
-        elseif(isset($data['id_person']) && $data['id_person']!='')$this -> db -> where('id_person = ' . "'" . $data['id_person'] . "'");
+        if(isset($data['id_user']) && $data['id_user']!='')$this->where('id_user = ' . "'" . $data['id_user'] . "'");
+        elseif(isset($data['id_person']) && $data['id_person']!='')$this->where('id_person = ' . "'" . $data['id_person'] . "'");
 
-        $this -> db -> limit(1);
+        $this->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $this->get();//var_dump($query->row());die();
 
         if($query -> num_rows() != 1)
 		{
@@ -186,16 +189,16 @@ Class M_Main extends Model
 	{
 		$return=array();
 
-		$this -> db -> select('*');
-        $this -> db -> from('person');
-        $this -> db -> join('client', 'client.id_person = person.id_person');
+		$this->select('*');
+        $this->from('person');
+        $this->join('client', 'client.id_person = person.id_person');
 
-        if(isset($data['id_user']) && $data['id_user']!='')$this -> db -> where('id_user = ' . "'" . $data['id_user'] . "'");
-        elseif(isset($data['id_person']) && $data['id_person']!='')$this -> db -> where('id_person = ' . "'" . $data['id_person'] . "'");
+        if(isset($data['id_user']) && $data['id_user']!='')$this->where('id_user = ' . "'" . $data['id_user'] . "'");
+        elseif(isset($data['id_person']) && $data['id_person']!='')$this->where('id_person = ' . "'" . $data['id_person'] . "'");
 
-        $this -> db -> limit(1);
+        $this->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $this->get();//var_dump($query->row());die();
 
         if($query -> num_rows() != 1)
 		{
@@ -208,7 +211,7 @@ Class M_Main extends Model
 	
 	public function Logout()
     {
-        $this->fm->logout();
+        $this->logout();
     }
 }
 ?>

@@ -454,3 +454,237 @@ in APPPATH\Controllers\Dashboard.php on line 13.
  2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
  3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:18 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:18 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:19 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:20 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:01:20 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:29 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:29 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:29 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:30 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:30 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:41 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:41 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 15:03:41 --> Cannot call constructor
+in APPPATH\Controllers\Main.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Main->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:49:42 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:49:46 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:49:46 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:49:46 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:07 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:07 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:07 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:07 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:08 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:08 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:08 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:08 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:08 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:08 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:11 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:18 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:50:21 --> Class 'App\Libraries\MT_Mail' not found
+in APPPATH\Controllers\Authentication.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Authentication->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:51:53 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:51:53 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:51:53 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-19 23:51:53 --> Cannot call constructor
+in APPPATH\Controllers\User.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\User->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

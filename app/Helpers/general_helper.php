@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
 
 function GetSessionVars()
 {
@@ -120,36 +120,30 @@ function LoadLanguage()
 
 function ProfileType($session)
 {
-    $data='';
-	$my_instance =& get_instance();
-	$access_profile=$session['rol'];
-	$id_person=$session['id_person'];//echo $id_person;
+    $data = [];
+    $my_instance =& get_instance();
+    $access_profile = $session['rol'];
+    $id_person = $session['id_person'];
 
-    if($access_profile=='worker')
-    {
-        $percent_result=$my_instance->M_Main->GetCompletedPercentByPersonID($id_person);//var_dump($percent_result);
-		
-		if($percent_result['error_code']==0)
-			$data['percent']=$percent_result['data']->completed_percent;//echo $percent_result['data']->completed_percent;
-		else
-			$data['percent']=0;
-		
-        $data['available_jobs']=3;
-        $data['profile_type']=$access_profile;
-    }
-    elseif($access_profile=='client')
-    {
-        $data['profile_type']=$access_profile;
-    }
-    elseif($access_profile=='asist')
-    {
-        $data['available_jobs']=5;
-        $data['profile_type']=$access_profile;
-    }
-    elseif($access_profile=='admin')
-    {
-        $data['available_jobs']=5;
-        $data['profile_type']=$access_profile;
+    if ($access_profile == 'worker') {
+        $percent_result = $my_instance->M_Main->GetCompletedPercentByPersonID($id_person);
+
+        if ($percent_result['error_code'] == 0) {
+            $data['percent'] = $percent_result['data']->completed_percent;
+        } else {
+            $data['percent'] = 0;
+        }
+
+        $data['available_jobs'] = 3;
+        $data['profile_type'] = $access_profile;
+    } elseif ($access_profile == 'client') {
+        $data['profile_type'] = $access_profile;
+    } elseif ($access_profile == 'asist') {
+        $data['available_jobs'] = 5;
+        $data['profile_type'] = $access_profile;
+    } elseif ($access_profile == 'admin') {
+        $data['available_jobs'] = 5;
+        $data['profile_type'] = $access_profile;
     }
 
     return $data;

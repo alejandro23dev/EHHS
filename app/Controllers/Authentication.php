@@ -3,13 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\Auth;
+use App\Models\M_Main;
+use MT_Mail;
 class Authentication extends BaseController
 {
-
-    function __construct()
-    {
-        $this->AuthModel = new Auth;
-    }
 
     public function index($msg='', $success='', $warning='', $error='')
     {
@@ -37,23 +34,23 @@ class Authentication extends BaseController
         $AuthModel = new Auth;
 
         $data=array(
-            'email'=>$this->input->post('email'),
-            'user'=>$this->input->post('user'),
-            'pass'=>password_hash($this->input->post('txt_pass'), PASSWORD_DEFAULT),
-            'rol'=>$this->input->post('rol'),
-            'sec1'=>$this->input->post('sec1'),
-            'sec2'=>$this->input->post('sec2'),
-            'sec3'=>$this->input->post('sec3'),
-            'ans1'=>password_hash($this->input->post('ans1'), PASSWORD_DEFAULT),
-            'ans2'=>password_hash($this->input->post('ans2'), PASSWORD_DEFAULT),
-            'ans3'=>password_hash($this->input->post('ans3'), PASSWORD_DEFAULT)
+            'email'=>$this->request->getPost('email'),
+            'user'=>$this->request->getPost('user'),
+            'pass'=>password_hash($this->request->getPost('txt_pass'), PASSWORD_DEFAULT),
+            'rol'=>$this->request->getPost('rol'),
+            'sec1'=>$this->request->getPost('sec1'),
+            'sec2'=>$this->request->getPost('sec2'),
+            'sec3'=>$this->request->getPost('sec3'),
+            'ans1'=>password_hash($this->request->getPost('ans1'), PASSWORD_DEFAULT),
+            'ans2'=>password_hash($this->request->getPost('ans2'), PASSWORD_DEFAULT),
+            'ans3'=>password_hash($this->request->getPost('ans3'), PASSWORD_DEFAULT)
         );//echo json_encode($data);
 
         $result= $AuthModel->CreateAccount($data);
 
         if($result['error_msg']=='0')
         {
-            $this->ValidateEmail($this->input->post('email'),'activate');
+            $this->ValidateEmail($this->request->getPost('email'),'activate');
             echo 'CREATED';
         }
         else
@@ -73,7 +70,7 @@ class Authentication extends BaseController
 
         if($this->form_validation->run()==1)
         {
-            $result = $this->CheckDatabase($this->input->post('pass'));//var_dump($result);
+            $result = $this->CheckDatabase($this->request->getPost('pass'));//var_dump($result);
 
             if ($result['error_msg']=='0')
             {
@@ -98,13 +95,16 @@ class Authentication extends BaseController
 
     public function CheckDatabase($password)
     {
+
+        $AuthModel = new Auth;
+
         $id_person='';
-        $username = $this->input->post('user');
-        $result = $this->Auth->Login($username, $password);//echo $result['data']->email;//var_dump($result);
+        $username = $this->request->getPost('user');
+        $result = $AuthModel->Login($username, $password);//echo $result['data']->email;//var_dump($result);
 
         if($result['error_msg']=='0')
         {
-            $result_person = $this->Auth->GetPersonByUserId($result['data']->id_user);//echo $result['data']->email;//var_dump($result);
+            $result_person = $AuthModel->GetPersonByUserId($result['data']->id_user);//echo $result['data']->email;//var_dump($result);
 
             if($result_person['error_msg']=='0')
             {
@@ -136,6 +136,9 @@ class Authentication extends BaseController
 
     public function ValidateEmail($email='',$send='')
     {
+        $AuthModel = new Auth;
+        $MT_Mail = new MT_Mail();
+        
         $empty='';
 
         if($email=='')$email = strip_tags($_POST['email']);
@@ -143,7 +146,7 @@ class Authentication extends BaseController
 
         if ($email != '')
         {
-            $result = $this->Auth->ValidateEmail($email);//var_dump($result);
+            $result = $AuthModel->ValidateEmail($email);//var_dump($result);
             //print $result['error_msg'];die();
 
             if ($result['error_msg']=='0')
@@ -182,10 +185,7 @@ class Authentication extends BaseController
                                 '</body>
                             </html>';
 
-                        $this->load->library('MT_Mail');
-                        $obj_mail = new MT_Mail();
-
-                        $obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                        $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                     }
                 }
                 elseif ($send=='user')
@@ -206,15 +206,12 @@ class Authentication extends BaseController
                                 '</body>
                             </html>';
 
-                    $this->load->library('MT_Mail');
-                    $obj_mail = new MT_Mail();
-
-                    print $obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                    print $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                 }
                 elseif ($send=='sec_question_continue')
                 {
-                    $this->load->model('M_Main');
-                    $result_vl['vl']=$this->M_Main->GetVLSecQuestion();
+                    $MainModel = new M_Main;
+                    $result_vl['vl']=$MainModel->GetVLSecQuestion();
                     //var_dump($result_vl['vl']);//
                     ?>
 
@@ -263,10 +260,7 @@ class Authentication extends BaseController
 									'</body>
 								</html>';
 
-							$this->load->library('MT_Mail');
-							$obj_mail = new MT_Mail();
-
-							$obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                                $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
 						}
 					}
                 }
@@ -297,16 +291,16 @@ class Authentication extends BaseController
                                 '</body>
                             </html>';
 
-                        $this->load->library('MT_Mail');
-                        $obj_mail = new MT_Mail();
+                        
+                        $MT_Mail = new MT_Mail();
 
-                        $obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                        $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                     }
                 }
                 elseif ($send=='recover')
                 {
                     if($result["data"]->sec1!='' && $result["data"]->sec2!='' && $result["data"]->sec3!='')
-                    $this->load->view('authentication/SecurityQuestions', $result);
+                    echo view('authentication/SecurityQuestions', $result);
                     else
                     {
                         print 'SEC_EMPTY';
@@ -341,10 +335,7 @@ class Authentication extends BaseController
                             '</body>
                             </html>';
 
-                        $this->load->library('MT_Mail');
-                        $obj_mail = new MT_Mail();
-
-                        $obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                         $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                     }
                 }
 
@@ -357,12 +348,13 @@ class Authentication extends BaseController
 
     public function ValidateUserID($user='',$type='')
     {
+        $AuthModel = new Auth;
         if($user=='')$user = strip_tags($_POST['user']);
         if($type=='')$type = $_POST['type'];
 
         if ($user != '')
         {
-            $result = $this->Auth->ValidateUserID($user);//var_dump($result);
+            $result = $AuthModel->ValidateUserID($user);//var_dump($result);
             //print $result['error_msg'];die();
 
             if ($result['error_msg']=='0')
@@ -370,7 +362,7 @@ class Authentication extends BaseController
                 if ($type=='recover')
                 {
                     if($result["data"]->sec1!='' && $result["data"]->sec2!='' && $result["data"]->sec3!='')
-                        $this->load->view('authentication/SecurityQuestions', $result);
+                        return view('authentication/SecurityQuestions', $result);
                     else
 						print 'SEC_EMPTY';
                     
@@ -385,16 +377,18 @@ class Authentication extends BaseController
 
     public function ValidateSecAnswers($user_email='',$search='', $ans1='',$ans2='',$ans3='')
     {
-        if($user_email=='')$data['user_email'] = $this->input->post('user_email');
-        if($search=='')$data['search'] = $this->input->post('search');
-        if($ans1=='')$data['ans1'] = strip_tags($this->input->post('ans1'));
-        if($ans2=='')$data['ans2'] = strip_tags($this->input->post('ans2'));
-        if($ans3=='')$data['ans3'] = strip_tags($this->input->post('ans3'));
+        $AuthModel = new Auth;
+
+        if($user_email=='')$data['user_email'] = $this->request->getPost('user_email');
+        if($search=='')$data['search'] = $this->request->getPost('search');
+        if($ans1=='')$data['ans1'] = strip_tags($this->request->getPost('ans1'));
+        if($ans2=='')$data['ans2'] = strip_tags($this->request->getPost('ans2'));
+        if($ans3=='')$data['ans3'] = strip_tags($this->request->getPost('ans3'));
 
 
         if($data['user_email'] != '' && $data['search'] != '' && $data['ans1'] != '' && $data['ans2'] != '' && $data['ans3'] != '')
         {
-            $result = $this->Auth->ValidateSecAnswers($data);//var_dump($result);
+            $result = $AuthModel->ValidateSecAnswers($data);//var_dump($result);
             //print $result['error_msg'];die();
             if(isset($result['data']) && $result['data']=='OK')
             {
@@ -409,10 +403,12 @@ class Authentication extends BaseController
 
     public function GenerarLinkTemporal($idusuario)
     {
+        $AuthModel = new Auth;
+
         $cadena = $idusuario.rand(1,9999999).date('Y-m-d');
         $token = md5(md5(md5($cadena)));
 
-        $result = $this->Auth->SaveToken($idusuario, $token);
+        $result = $AuthModel->SaveToken($idusuario, $token);
         $result['token']=$token;
 
         return $result;
@@ -420,30 +416,34 @@ class Authentication extends BaseController
 
     public function Restore($token='')
     {
+        $AuthModel = new Auth;
+
         $data['token']=$token;//print $token;die();
 
-        $result=$this->Auth->ValidaToken($token);//var_dump($result);
+        $result=$AuthModel->ValidaToken($token);//var_dump($result);
 
         if ($result['error_code']=='0')
         {
             $data['id'] = $result['data']->id_user;
             $data['section_auth'] = '/authentication/RestorePass.php';
-            $this->load->view('dashboard/Dashboard', $data);
+            return view('dashboard/Dashboard', $data);
         }
         else
         {
             $data['error']='Sorry, the token is expired.';
 			$data['section_auth'] = '/authentication/Login.php';
-			redirect('Main');
+            return redirect()->to('Main');
         }
     }
 
     public function Activate($token='', $email='')
     {
+        $AuthModel = new Auth;
+
         $data['section_auth'] = '/authentication/Login.php';
 		$data['token']=$token;//print $token;die();
         
-        $result=$this->Auth->ActivateAccount($token);//var_dump($result);
+        $result=$AuthModel->ActivateAccount($token);//var_dump($result);
 
 		if ($result['error_msg']=='0')
         {
@@ -458,23 +458,25 @@ class Authentication extends BaseController
 			$data['error']='Sorry, the token is expired. Please, check your inbox. Has been sent an email to: '.$email;
         }
 		
-		$this->load->helper('General_Helper');
+		helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
 		
-		$this->load->view('dashboard/Dashboard', $data);
+		return view('dashboard/Dashboard', $data);
     }
 
     public function SaveNewPass()
     {
+        $AuthModel = new Auth;
+
         $data=array(
-            'pass'=>password_hash($this->input->post('txt_pass'), PASSWORD_DEFAULT),
-            'token'=>$this->input->post('inp_token'),
-            'id'=>$this->input->post('inp_id')
+            'pass'=>password_hash($this->request->getPost('txt_pass'), PASSWORD_DEFAULT),
+            'token'=>$this->request->getPost('inp_token'),
+            'id'=>$this->request->getPost('inp_id')
         );//var_dump($data);die();
 
-        $result=$this->Auth->SaveNewPass($data);
+        $result=$AuthModel->SaveNewPass($data);
 
         $msg='';
         $success='';
@@ -490,44 +492,46 @@ class Authentication extends BaseController
     public function GoForgotUser($email='')
     {
         $data['email']=$email;
-        $this->load->view('authentication/ForgotUser', $data);
+        return view('authentication/ForgotUser', $data);
     }
 
     public function GoLogin()
     {
-        $this->load->helper('General_Helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
-        $this->load->view('authentication/Login', $data);
+        return view('authentication/Login', $data);
     }
 
     public function GoForgotPassword($email='')
     {
         $data['email']=$email;
-		$this->load->view('authentication/ForgotPassword', $data);
+		return view('authentication/ForgotPassword', $data);
     }
 
     public function GoResetPassword()
     {
-        $this->load->view('authentication/ResetPassword');
+        return view('authentication/ResetPassword');
     }
 
     public function GoSignUp()
     {
-        $this->load->view('authentication/SignUp');
+        return view('authentication/SignUp');
     }
 
     public function GoRecoverAccount()
     {
-        $this->load->view('authentication/RecoverAccount');
+        return view('authentication/RecoverAccount');
     }
 
     public function CheckExistUserID()
     {
-        $user_id=$this->input->post('user_id');
+        $AuthModel = new Auth;
 
-        $result=$this->Auth->ValidateUserID($user_id);
+        $user_id=$this->request->getPost('user_id');
+
+        $result=$AuthModel->ValidateUserID($user_id);
 
         if($result['error_msg']=='0')
         {
@@ -539,8 +543,10 @@ class Authentication extends BaseController
 
     public function CheckExistEmail()
     {
-        $email=$this->input->post('email');
-        $result=$this->Auth->ValidateEmail($email);
+        $AuthModel = new Auth;
+
+        $email=$this->request->getPost('email');
+        $result=$AuthModel->ValidateEmail($email);
 
         if($result['error_msg']=='0')
         {
@@ -552,13 +558,15 @@ class Authentication extends BaseController
 
     public function ResetNewPass()
     {
+        $AuthModel = new Auth;
+
         $data=array(
-            'newpass'=>password_hash($this->input->post('txt_pass'), PASSWORD_DEFAULT),
-            'pass'=>$this->input->post('password'),
-            'user'=>$this->input->post('user')
+            'newpass'=>password_hash($this->request->getPost('txt_pass'), PASSWORD_DEFAULT),
+            'pass'=>$this->request->getPost('password'),
+            'user'=>$this->request->getPost('user')
         );
 
-        $result=$this->Auth->ResetNewPass($data);
+        $result=$AuthModel->ResetNewPass($data);
 
         $msg='';
         $success='';
@@ -579,13 +587,15 @@ class Authentication extends BaseController
 
     public function Logout()
     {
+        $AuthModel = new Auth;
+
         if($this->session->userdata('logged_user_ehhs'))
         {
             $this->session->unset_userdata('logged_user_ehhs');
-            $this->Auth->Logout();
+            $AuthModel->Logout();
         }
 
-        ///redirect('Dashboard/GoDashboard');
+        ///return redirect()->to('Dashboard/GoDashboard');
     }
 }
 ?>

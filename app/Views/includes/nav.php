@@ -2,8 +2,8 @@
 <!--=== Header ===-->
 <div class="header" id="div_header">
 
-    <?php require_once 'top_bar.php'?>
-    <?php require_once 'nav_bar.php'?>
+    <?php include_once 'top_bar.php'?>
+    <?php include_once 'nav_bar.php'?>
 
 </div>
 <!--=== End Header ===-->

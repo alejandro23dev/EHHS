@@ -486,7 +486,7 @@ if(isset($data['form']['data']->form_sign))
 		</div>
 
 	</div>
-<?php require_once(APPPATH."views/includes/footer_scripts.php");?>
+<?php include_once(APPPATH."views/includes/footer_scripts.php");?>
 <script type="text/javascript">
 	function DeleteFile(id, folder, name)
     {

@@ -8,18 +8,10 @@ use App\Models\M_User;
 use App\Models\M_Care;
 use App\Models\M_Client;
 use App\Models\M_Employee;
+use MT_Mail;
 
 class Main extends BaseController
 {
-    function  __construct()
-    {
-        parent::__construct();
-        $this->MainModel = new M_Main;
-        $this->JobModel = new M_Job;
-        $this->ClientModel = new M_Client;
-        $this->UserModel = new M_User;
-        $this->CareModel = new M_Care;
-    }
 
     public function index($view="Main", $msg="", $success="", $warning="", $error="")
 	{
@@ -29,13 +21,13 @@ class Main extends BaseController
         $data['error']=$error;
         $data['view']=$view;
 		
-		$data['ctr']=$this->input->get('c');
-		$data['func']=$this->input->get('f');
-		$data['param1']=$this->input->get('p1');
-		$data['param2']=$this->input->get('p2');
-		$data['view_area']=$this->input->get('v');
+		$data['ctr']=$this->request->getPost('c');
+		$data['func']=$this->request->getPost('f');
+		$data['param1']=$this->request->getPost('p1');
+		$data['param2']=$this->request->getPost('p2');
+		$data['view_area']=$this->request->getPost('v');
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
@@ -47,7 +39,7 @@ class Main extends BaseController
     {
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session']=GetSessionVars();
             $data['language']=LoadLanguage();
             $data['profile_type']=ProfileType($data['session']);
@@ -65,7 +57,7 @@ class Main extends BaseController
                 for($i=0;$i<$cant; next($var), $i++)
                 {
                     $view_url = current($var);//print $table.' - ';die();
-                    $this->load->view($view_url, $data);
+                    return view($view_url, $data);
                 }
             }
         }
@@ -89,14 +81,14 @@ class Main extends BaseController
             $result='';
 			date_default_timezone_set('America/New_York');
 
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session']=GetSessionVars();
             $data['language']=LoadLanguage();
             $data['profile_type']=ProfileType($data['session']);
 
             if($data_type==='data_account')
             {
-                $result['id_user']=$this->input->post('id_user');
+                $result['id_user']=$this->request->getPost('id_user');
 
                 if($result['id_user']!='')
                 {
@@ -105,13 +97,13 @@ class Main extends BaseController
                 }
                 else
                 {
-                    $result['role']=$this->input->post('role');//print ' roleeee '.$result['role'];
+                    $result['role']=$this->request->getPost('role');//print ' roleeee '.$result['role'];
                     $result['user']='';
                 }
             }
             elseif($data_type==='data_profile')
             {
-                $result['id_user']=$this->input->post('id_user');
+                $result['id_user']=$this->request->getPost('id_user');
 
                 if($result['id_user']!='')
                 {
@@ -121,13 +113,13 @@ class Main extends BaseController
                 }
                 else
                 {
-                    $result['role']=$this->input->post('role');
+                    $result['role']=$this->request->getPost('role');
                     $result['profile']='';
                 }
             }
 			elseif($data_type==='data_employment')
             {
-                $result['id_person']=$this->input->post('id_person');
+                $result['id_person']=$this->request->getPost('id_person');
 
                 if($result['id_person']=='')
                     $result['id_person']=$data['session']['id_person'];//echo $data['session']['id_person'];die();
@@ -140,7 +132,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_probation')
             {
-				$result['id_employee']=$this->input->post('id_employee');
+				$result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'probation');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'probation');//var_dump($result['consent']);die();
@@ -149,7 +141,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_statement')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'statement');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'statement');//var_dump($result['consent']);die();
@@ -157,7 +149,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_equipment')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'equipment');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'equipment');//var_dump($result['consent']);die();
@@ -166,7 +158,7 @@ class Main extends BaseController
 			elseif($data_type==='data_medical')
             {
                 
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'medical');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'medical');//var_dump($result['consent']);die();
@@ -174,7 +166,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_orientation')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'orientation');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'orientation');//var_dump($result['consent']);die();
@@ -182,7 +174,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_tax')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'tax');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'tax');//var_dump($result['consent']);die();
@@ -190,7 +182,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_inservice')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'inservice');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'inservice');//var_dump($result['consent']);die();
@@ -198,7 +190,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_over')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'over');
                 $result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'over');//var_dump($result['consent']);die();
@@ -206,7 +198,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_emergency')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'emergency');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -214,7 +206,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_confidentiality')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'confidentiality');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -222,7 +214,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_agreement')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'agreement');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -230,7 +222,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_affidavit')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'affidavit');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -238,7 +230,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_comunicado')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'comunicado');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -246,7 +238,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_references')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'references');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -254,7 +246,7 @@ class Main extends BaseController
             }
 			elseif($data_type==='data_quiz')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'quiz');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -262,7 +254,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_i9')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'i9');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -270,7 +262,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_w9')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'w9');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -278,7 +270,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_upload')
             {
-                $result['id_employee']=$this->input->post('id_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
                 $result['role']=$UserModel->GetRoleByEmployeeID($result['id_employee']);
                 $result['form']=$UserModel->GetFormByEmployeeID($result['id_employee'], 'upload');
                 //$result['consent']=$UserModel->GetConsentByEmployeeID($result['id_employee'], 'emergency');//var_dump($result['consent']);die();
@@ -297,7 +289,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_client_preference')
             {
-                $result['id_person']=$this->input->post('id_person');
+                $result['id_person']=$this->request->getPost('id_person');
 
                 if($result['id_person']=='')
                     $result['id_person']=$data['session']['id_person'];
@@ -307,8 +299,8 @@ class Main extends BaseController
             }
             elseif($data_type==='data_list_care')
             {
-                $result['id_client']=$this->input->post('id_client');
-                $result['show_client']=$this->input->post('show_client');
+                $result['id_client']=$this->request->getPost('id_client');
+                $result['show_client']=$this->request->getPost('show_client');
 
                 if(isset($result['id_client']) && $result['id_client']!='')
                     $result['care']=$CareModel->GetCareByClientID($result['id_client']);
@@ -317,8 +309,8 @@ class Main extends BaseController
             }
             elseif($data_type==='data_list_assigned_job')
             {
-                $result['id_employee']=$this->input->post('id_employee');
-                $result['show_employee']=$this->input->post('show_employee');
+                $result['id_employee']=$this->request->getPost('id_employee');
+                $result['show_employee']=$this->request->getPost('show_employee');
 
 
                 if(isset($result['id_employee']) && $result['id_employee']!='')
@@ -328,7 +320,7 @@ class Main extends BaseController
             }
             elseif($data_type==='data_list_available_job')
             {
-                $result['show_client']=$this->input->post('show_client');
+                $result['show_client']=$this->request->getPost('show_client');
 
                 $result['care']=$CareModel->GetAvailableCare();
 
@@ -352,13 +344,13 @@ class Main extends BaseController
             }
             elseif($data_type==='data_list_interested_employee')
             {
-                $id_care_schedule = $this->input->post('id_care_schedule');
+                $id_care_schedule = $this->request->getPost('id_care_schedule');
 
                 
                 $result['interested_employee']=$JobModel->GetInterestedEmployeeByCareScheduleID($id_care_schedule);
             }
 
-            $print=$this->input->post('print');
+            $print=$this->request->getPost('print');
             if(isset($print) && $print!='')
             {
 
@@ -411,7 +403,7 @@ class Main extends BaseController
         $data['error']=$error;
         $data['view']=str_replace("-","/",$view);
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session'] = GetSessionVars();//die();
         $data['language'] = LoadLanguage();
         $data['profile_type'] = ProfileType($data['session']);
@@ -424,14 +416,14 @@ class Main extends BaseController
     {
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
 
-            $data['go_view'] = str_replace("-","/", $this->input->post('go_view'));
-            $data['go_back'] = $this->input->post('go_back');
-            $data['id'] = $this->input->post('id');
+            $data['go_view'] = str_replace("-","/", $this->request->getPost('go_view'));
+            $data['go_back'] = $this->request->getPost('go_back');
+            $data['id'] = $this->request->getPost('id');
 
             if ($data['go_view'] != '')
                 return view($data['go_view'], $data);
@@ -526,9 +518,9 @@ class Main extends BaseController
         $MainModel = new M_Main;
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $tables = $this->input->post('table');
-            $field_ids = $this->input->post('field_id');
-            $data['ids'] = $this->input->post('id');
+            $tables = $this->request->getPost('table');
+            $field_ids = $this->request->getPost('field_id');
+            $data['ids'] = $this->request->getPost('id');
 
             //print 'lays: '.$tables.' ids: '.$data['ids'].' ctr_public function: '.$ctr_public function;die();
 
@@ -578,10 +570,8 @@ class Main extends BaseController
         $body=$_POST['body'];
         $attachments=$_POST['attachments'];
 
-        $this->load->library('MT_Mail');
-        $obj_mail = new MT_Mail();
-
-        $return=$obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+        $MT_Mail = new MT_Mail();
+        $return = $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
 
         print $return;
     }
@@ -619,33 +609,31 @@ class Main extends BaseController
                 '<br>' .
                 EMAIL_SIGNATURE.'</body></html>';
 
-            $this->load->library('MT_Mail');
-            $obj_mail = new MT_Mail();
-
-            $obj_mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                $MT_Mail = new MT_Mail();
+                $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
         }
     }
 
     public function SwitchLanguage($language='')
     {
-        if($language=='')$language=$this->input->post('language');
+        if($language=='')$language=$this->request->getPost('language');
 
         $session_lang = array('lang' => $language);
         $this->session->set_userdata('language', $session_lang);
 
-        $this->load->helper('general_helper');
+        helper('general_helper');
         LoadLanguage();
     }
 
     public function RebuildHeader()
     {
-        $this->load->helper('general_helper');
+        helper('general_helper');
         $data['session']=GetSessionVars();
         $data['language']=LoadLanguage();
         $data['profile_type']=ProfileType($data['session']);
 
-        $this->load->view('includes/top_bar', $data);
-        $this->load->view('includes/nav_bar', $data);
+        return view('includes/top_bar', $data);
+        return view('includes/nav_bar', $data);
     }
 
     public function DownloadFile()

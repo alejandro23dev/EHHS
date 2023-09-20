@@ -7,13 +7,6 @@ use App\Models\M_Client;
 use App\Models\M_Main;
 class Care extends BaseController
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->EmployeeModel = new M_Employee;
-        $this->ClientModel = new M_Client;
-        $this->MainModel = new M_Main;
-    }
 
     public function GoAddCare()
     {
@@ -21,15 +14,15 @@ class Care extends BaseController
 
         if($this->session->userdata('logged_user_ehhs'))
         {
-            $this->load->helper('general_helper');
+            helper('general_helper');
             $data['session'] = GetSessionVars();//die();
             $data['language'] = LoadLanguage();
             $data['profile_type'] = ProfileType($data['session']);
 
             $data['go_view'] = 'care/AddCare';
-            $data['go_back'] = $this->input->post('go_back');
+            $data['go_back'] = $this->request->getPost('go_back');
 
-            $data['id_client']=$this->input->post('id_client');
+            $data['id_client']=$this->request->getPost('id_client');
 
             
             $data['client']= $ClientModel->GetAllActiveClients();
@@ -70,7 +63,7 @@ class Care extends BaseController
                     $field_id=$value;
             }
 
-            $data['ids'] = $this->input->post('id');
+            $data['ids'] = $this->request->getPost('id');
             $var = explode("-", $data['ids']);
 
             if(sizeof($var) != 0)

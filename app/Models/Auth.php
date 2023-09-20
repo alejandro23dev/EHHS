@@ -4,133 +4,130 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-Class Auth extends Model
+class Auth extends Model
 {
+    protected $db;
+
     function  __construct()
     {
         parent::__construct();
+        $this->db = \Config\Database::connect();
     }
 
-    public function Result($error_code=0, $error_msg=0, $result='')
+    public function Result($error_code = 0, $error_msg = 0, $result = '')
     {
-        $return['error_code']=$error_code;
-        $return['error_msg']=$error_msg;
-        $return['data']=$result;
+        $return['error_code'] = $error_code;
+        $return['error_msg'] = $error_msg;
+        $return['data'] = $result;
 
         return $return;
     }
 
-    public function Login($username, $password)
-	{
-        $this -> db -> select('*');
-        $this -> db -> from('user');
-        $this -> db -> where('user = ' . "'" . $username . "'");
-        $this -> db -> limit(1);
+    public function login($username, $password)
+    {
+        $builder = $this->db->table('user');
+        $builder->select('*');
+        $builder->where('user', $username);
+        $builder->limit(1);
 
-        $query = $this -> db -> get();
+        $query = $builder->get();
 
-        if($query -> num_rows() == 1)
-        {
-			if($query->row()->activate_status==1)
-			{
+        if ($query->getNumRows() == 1) {
+            if ($query->getRow()->activate_status == 1) {
 
-                if($query->row()->status==1)
-                {
-                    if(password_verify($password, $query->row()->pass))
-                        $return=$this->Result(0, 0, $query->row());
-                    else
-                        $return=$this->Result(1, 'WRONG_PASS');
+                if ($query->getRow()->status == 1) {
+                    if (password_verify($password, $query->getRow()->pass)) {
+                        $return = $this->result(0, 0, $query->getRow());
+                    } else {
+                        $return = $this->result(1, 'WRONG_PASS');
+                    }
+                } else {
+                    $return = $this->result(1, 'INACTIVE', $query->getRow());
                 }
-                else
-                    $return=$this->Result(1, 'INACTIVE', $query->row());
-			}
-			else
-			$return=$this->Result(1, 'ACTIVATE', $query->row());
+            } else {
+                $return = $this->result(1, 'ACTIVATE', $query->getRow());
+            }
+        } else {
+            $return = $this->result(1, 'WRONG_ID');
         }
-        else
-        $return=$this->Result(1, 'WRONG_ID');
-       
-        return $return;
-	}
-
-	public function GetPersonByUserId($id_user)
-	{
-        $this -> db -> select('*');
-        $this -> db -> from('person');
-        $this -> db -> where('id_user = ' . "'" . $id_user . "'");
-        $this -> db -> limit(1);
-
-        $query = $this -> db -> get();
-
-        if($query -> num_rows() == 1)
-        {
-			$return=$this->Result(0, 0, $query->row());
-        }
-        else
-        $return=$this->Result(1, 'PERSON_EMPTY');
 
         return $return;
-	}
-
-    public function ValidateEmail($email)
-    {
-        $this -> db -> select('*');
-        $this -> db -> from('user');
-        $this -> db -> where('email = ' . "'" . $email . "'");
-        $this -> db -> limit(1);
-
-        $query = $this -> db -> get();//var_dump($query->row());die();
-
-        if($query -> num_rows() == 1)
-			$return=$this->Result(0, 0, $query->row());
-        else
-			$return=$this->Result(1, 'WRONG_EMAIL');
-       
-		return $return;
     }
 
-    public function ValidateUserID($user)
+    public function getPersonByUserId($id_user)
     {
-        $this -> db -> select('*');
-        $this -> db -> from('user');
-        $this -> db -> where('user = ' . "'" . $user . "'");
-        $this -> db -> limit(1);
+        $builder = $this->db->table('person');
+        $builder->select('*');
+        $builder->where('id_user', $id_user);
+        $builder->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $builder->get();
 
-        if($query -> num_rows() == 1)
-			$return=$this->Result(0, 0, $query->row());
-        else
-			$return=$this->Result(1, 'WRONG_ID');
-       
-		return $return;
+        if ($query->getNumRows() == 1) {
+            $return = $this->result(0, 0, $query->getRow());
+        } else {
+            $return = $this->result(1, 'PERSON_EMPTY');
+        }
+
+        return $return;
+    }
+
+    public function validateEmail($email)
+    {
+        $builder = $this->db->table('user');
+        $builder->select('*');
+        $builder->where('email', $email);
+        $builder->limit(1);
+
+        $query = $builder->get();
+
+        if ($query->getNumRows() == 1) {
+            $return = $this->result(0, 0, $query->getRow());
+        } else {
+            $return = $this->result(1, 'WRONG_EMAIL');
+        }
+
+        return $return;
+    }
+
+    public function validateUserID($user)
+    {
+        $builder = $this->db->table('user');
+        $builder->select('*');
+        $builder->where('user', $user);
+        $builder->limit(1);
+
+        $query = $builder->get();
+
+        if ($query->getNumRows() == 1) {
+            $return = $this->result(0, 0, $query->getRow());
+        } else {
+            $return = $this->result(1, 'WRONG_ID');
+        }
+
+        return $return;
     }
 
     public function ValidateSecAnswers($data)
     {
-        $this -> db -> select('*');
-        $this -> db -> from('user');
-		
-        if($data['user_email']=='user')
-			$this -> db -> where('user = ' . "'" . $data['search'] . "'");
-        elseif($data['user_email']=='email')
-            $this -> db -> where('email = ' . "'" . $data['search'] . "'");
-			
-        $this -> db -> limit(1);
+        $this->select('*');
+        $this->from('user');
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
-		
-		if($query->num_rows() > 0)
-        {
-            foreach ($query->result() as $row) 
-			{
-                if (password_verify($data['ans1'], $query->row()->ans1))
-                {
-                    if (password_verify($data['ans2'], $query->row()->ans2))
-                    {
-                        if (password_verify($data['ans3'], $query->row()->ans3))
-                        {
-							$return['user'] = $query->row()->user;
+        if ($data['user_email'] == 'user')
+            $this->where('user = ' . "'" . $data['search'] . "'");
+        elseif ($data['user_email'] == 'email')
+            $this->where('email = ' . "'" . $data['search'] . "'");
+
+        $this->limit(1);
+
+        $query = $this->get(); //var_dump($query->row());die();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                if (password_verify($data['ans1'], $query->row()->ans1)) {
+                    if (password_verify($data['ans2'], $query->row()->ans2)) {
+                        if (password_verify($data['ans3'], $query->row()->ans3)) {
+                            $return['user'] = $query->row()->user;
                             $return['pass'] = rand(10000, 99999);
 
                             $data['id'] = $query->row()->id_user;
@@ -139,113 +136,109 @@ Class Auth extends Model
                             $this->SaveNewPass($data);
 
                             $return['data'] = 'OK';
-						}
-                        else
+                        } else
                             $return['error'] = 'ANW3_WRONG';
-                    }
-                    else
+                    } else
                         $return['error'] = 'ANW2_WRONG';
-                }
-                else
+                } else
                     $return['error'] = 'ANW1_WRONG';
             }
-            
-			return $return;
+
+            return $return;
         }
     }
 
-    public function SaveToken($id_usuario, $token)//
+    public function saveToken($id_usuario, $token)
     {
-        $query = $this->db->where('id_user', $id_usuario)->get('user');
+        $query = $this->where('id_user', $id_usuario)->get('user');
 
-        if($query->num_rows() > 0)
-        {
-            $update_account = array(
-                'token'=>$token
-            );
+        if ($query->getNumRows() > 0) {
+            $update_account = [
+                'token' => $token
+            ];
 
-            $this->db->update('user', $update_account, array('id_user' => $id_usuario));
+            $this->update('user', $update_account, ['id_user' => $id_usuario]);
 
-            $return=$this->Result(0, 0, $query->row());
+            $return = $this->result(0, 0, $query->getRow());
+        } else {
+            $return = $this->result(1, 'The user does not exist.');
         }
-        else
-			$return=$this->Result(1, 'The user does not exist.');
-       
-		return $return;
+
+        return $return;
     }
 
-    public function ValidaToken($token)
+    public function validaToken($token)
     {
-        $this -> db -> select('*');
-        $this -> db -> from('user');
-        $this -> db -> where('token = ' . "'" . $token . "'");
-        $this -> db -> limit(1);
+        $this->select('*');
+        $this->from('user');
+        $this->where('token', $token);
+        $this->limit(1);
 
-        $query = $this -> db -> get();//var_dump($query->row());die();
+        $query = $this->get(); //var_dump($query->getRow());die();
 
-        if($query -> num_rows() == 1)
-			$return=$this->Result(0, 0, $query->row());
-        else
-			$return=$this->Result(1, 'EXPIRED');
-       
-		return $return;
+        if ($query->getNumRows() == 1) {
+            $return = $this->result(0, 0, $query->getRow());
+        } else {
+            $return = $this->result(1, 'EXPIRED');
+        }
+
+        return $return;
     }
 
     public function SaveNewPass($data)
     {
-		$update_account = array(
-			'pass'=>$data['pass'],
-			'token'=>''
-		);
+        $update_account = array(
+            'pass' => $data['pass'],
+            'token' => ''
+        );
 
-		$this->db->update('user', $update_account, array('id_user' => $data['id']));
-		$return=$this->Result(0, 0);
-       
-		return $return;
+        $this->update('user', $update_account, array('id_user' => $data['id']));
+        $return = $this->Result(0, 0);
+
+        return $return;
     }
 
     public function ActivateAccount($token)
     {
         $update_account = array(
-			'activate_status'=>1,
-			'token'=>''
-		);
+            'activate_status' => 1,
+            'token' => ''
+        );
 
-		$this->db->update('user', $update_account, array('token' => $token));
-		$return=$this->Result(0, 0);
-       
-		return $return;
+        $this->update('user', $update_account, array('token' => $token));
+        $return = $this->Result(0, 0);
+
+        return $return;
     }
 
     public function ResetNewPass($data)
     {
-        $return=$this->Login($data['user'], $data['pass']);
+        $return = $this->Login($data['user'], $data['pass']);
 
-		if ($return['error_msg']=='0')
-        {
-			$id=$return['data']->id_user;
-			
-			$update_account = array(
-				'pass'=>$data['newpass']
-			);
+        if ($return['error_msg'] == '0') {
+            $id = $return['data']->id_user;
 
-			$this->db->update('user', $update_account, array('id_user' => $id));
-			$return=$this->Result(0, 0);
-		}
-		
-		return $return;
+            $update_account = array(
+                'pass' => $data['newpass']
+            );
+
+            $this->update('user', $update_account, array('id_user' => $id));
+            $return = $this->Result(0, 0);
+        }
+
+        return $return;
     }
 
     public function CreateAccount($data)
     {
-        $this->db->insert('user', $data);
-		$return=$this->Result(0, 0);
+        $this->insert('user', $data);
+        $return = $this->Result(0, 0);
 
         return $return;
     }
 
     public function Logout()
     {
-       $this->db->close();
+        $this->close();
     }
 }

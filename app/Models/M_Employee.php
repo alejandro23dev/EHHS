@@ -6,12 +6,15 @@ use CodeIgniter\Model;
 
 Class M_Employee extends Model
 {
+    protected $db;
+    
     function  __construct()
     {
         parent::__construct();
+        $this->db = \Config\Database::connect();
     }
 
-    function Result($error_code=0, $error_msg=0, $result='')
+    public function Result($error_code=0, $error_msg=0, $result='')
     {
         $return['error_code']=$error_code;
         $return['error_msg']=$error_msg;
@@ -20,15 +23,15 @@ Class M_Employee extends Model
         return $return;
     }
 
-    function GetAllWorkers()
+    public function GetAllWorkers()
     {
-        $this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> join('person', 'employee.id_person = person.id_person');
-        $this -> db -> join('user', 'user.id_user = person.id_user');
-        $this -> db -> where("rol = 'worker'");
+        $this->select('*');
+        $this->from('employee');
+        $this->join('person', 'employee.id_person = person.id_person');
+        $this->join('user', 'user.id_user = person.id_user');
+        $this->where("rol = 'worker'");
 
-        $query = $this -> db -> get();//var_dump($query->result());die();
+        $query = $this->get();//var_dump($query->result());die();
 
         if($query -> num_rows() >= 1)
             $return=$this->Result(0, 0, $query->result());
@@ -38,18 +41,18 @@ Class M_Employee extends Model
         return $return;
     }
 
-    function GetAllApprovedWorkers()
+    public function GetAllApprovedWorkers()
     {
-        $this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> join('person', 'employee.id_person = person.id_person');		
-		$this -> db -> join('zip', 'person.id_zip = zip.id_zip');
-        $this -> db -> join('user', 'user.id_user = person.id_user');
-        $this -> db -> where("rol = 'worker'");
-        $this -> db -> where("user.status = '1'");
-        $this -> db -> where("employee.approved = '1'");
+        $this->select('*');
+        $this->from('employee');
+        $this->join('person', 'employee.id_person = person.id_person');		
+		$this->join('zip', 'person.id_zip = zip.id_zip');
+        $this->join('user', 'user.id_user = person.id_user');
+        $this->where("rol = 'worker'");
+        $this->where("user.status = '1'");
+        $this->where("employee.approved = '1'");
 
-        $query = $this -> db -> get();//var_dump($query->result());die();
+        $query = $this->get();//var_dump($query->result());die();
 
         if($query -> num_rows() >= 1)
             $return=$this->Result(0, 0, $query->result());
@@ -59,17 +62,17 @@ Class M_Employee extends Model
         return $return;
     }
 
-    function GetWorkerByApproved($approved)
+    public function GetWorkerByApproved($approved)
     {
-        $this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> join('person', 'employee.id_person = person.id_person');
-        $this -> db -> join('user', 'user.id_user = person.id_user');
-        $this -> db -> where("rol = 'worker'");
-        $this -> db -> where('employee.approved = ' . "'" . $approved . "'");
-        $this -> db -> where("status = '1'");
+        $this->select('*');
+        $this->from('employee');
+        $this->join('person', 'employee.id_person = person.id_person');
+        $this->join('user', 'user.id_user = person.id_user');
+        $this->where("rol = 'worker'");
+        $this->where('employee.approved = ' . "'" . $approved . "'");
+        $this->where("status = '1'");
 
-        $query = $this -> db -> get();//var_dump($query->result());die();
+        $query = $this->get();//var_dump($query->result());die();
 
         if($query -> num_rows() >= 1)
             $return=$this->Result(0, 0, $query->result());
@@ -79,17 +82,17 @@ Class M_Employee extends Model
         return $return;
     }
 
-    function GetApprovedByPersonID($id_person)
+    public function GetApprovedByPersonID($id_person)
     {
-        $this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> join('person', 'employee.id_person = person.id_person');
-        $this -> db -> join('user', 'user.id_user = person.id_user');
-        $this -> db -> where("rol = 'worker'");
-        $this -> db -> where('employee.id_person = ' . "'" . $id_person . "'");
-        $this -> db -> where("status = '1'");
+        $this->select('*');
+        $this->from('employee');
+        $this->join('person', 'employee.id_person = person.id_person');
+        $this->join('user', 'user.id_user = person.id_user');
+        $this->where("rol = 'worker'");
+        $this->where('employee.id_person = ' . "'" . $id_person . "'");
+        $this->where("status = '1'");
 
-        $query = $this -> db -> get();//var_dump($query->result());die();
+        $query = $this->get();//var_dump($query->result());die();
 
         if($query -> num_rows() >= 1)
             $return=$this->Result(0, 0, $query->result());
@@ -99,15 +102,15 @@ Class M_Employee extends Model
         return $return;
     }
 
-    function GetEmployeeByUserID($id_user)
+    public function GetEmployeeByUserID($id_user)
     {
-        $this -> db -> select('*');
-        $this -> db -> from('employee');
-        $this -> db -> join('person', 'employee.id_person = person.id_person');
-        $this -> db -> join('user', 'user.id_user = person.id_user');
-        $this -> db -> where('user.id_user = ' . "'" . $id_user . "'");
+        $this->select('*');
+        $this->from('employee');
+        $this->join('person', 'employee.id_person = person.id_person');
+        $this->join('user', 'user.id_user = person.id_user');
+        $this->where('user.id_user = ' . "'" . $id_user . "'");
 
-        $query = $this -> db -> get();//var_dump($query->result());die();
+        $query = $this->get();//var_dump($query->result());die();
 
         if($query -> num_rows() >= 1)
             $return=$this->Result(0, 0, $query->result());
