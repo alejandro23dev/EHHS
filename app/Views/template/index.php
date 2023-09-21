@@ -10,19 +10,16 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
-                    <a href="#index" class="nav-item nav-link">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
-                    <a href="#service" class="nav-item nav-link">Services</a>
+                    <a href="#index" id="aHome" class="nav-item nav-link">Home</a>
+                    <a href="#about" id="aAbout" class="nav-item nav-link">About</a>
+                    <a href="#service" id="aServices" class="nav-item nav-link">Services</a>
                     <div class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Apply</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="#appointment" class="dropdown-item">Appointment</a>
-                            <a href="#opening" class="dropdown-item">Open Hours</a>
-                            <a href="#team" class="dropdown-item">Our Team</a>
-                            <a href="#testimonial" class="dropdown-item">Testimonial</a>
-                        </div>
+                        <a href="" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Apply</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Specialist</a></li>
+                        </ul>
                     </div>
-                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                    <a href="#contact" id="aContact" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
         </nav>
@@ -45,7 +42,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Esperanza Home Health</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Elderly care</h3>
-                            <p class="mx-md-5 px-5">We all owe a lot to our elderly relatives, let's not let them be alone. We will take care of and satisfy all your needs for you.    </p>
+                            <p class="mx-md-5 px-5">We all owe a lot to our elderly relatives, let's not let them be alone. We will take care of and satisfy all your needs for you. </p>
                             <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Request A Service</a>
                         </div>
                     </div>
@@ -137,7 +134,7 @@
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3 mb-4">Facial Therapy</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    
+
                 </div>
             </div>
             <div class="service-item position-relative">
@@ -145,7 +142,7 @@
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3 mb-4">Skin Care</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    
+
                 </div>
             </div>
             <div class="service-item position-relative">
@@ -153,7 +150,7 @@
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3 mb-4">Stream Bath</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    
+
                 </div>
             </div>
             <div class="service-item position-relative">
@@ -161,7 +158,7 @@
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3 mb-4">Face Masking</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    
+
                 </div>
             </div>
         </div>
@@ -436,3 +433,28 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#index").mouseover(function() {
+            $("#aHome").addClass("active");
+        }).mouseout(function() {
+            $("#aHome").removeClass("active");
+        });
+        $("#about").mouseover(function() {
+            $("#aAbout").addClass("active");
+        }).mouseout(function() {
+            $("#aAbout").removeClass("active");
+        });
+        $("#service").mouseover(function() {
+            $("#aServices").addClass("active");
+        }).mouseout(function() {
+            $("#aServices").removeClass("active");
+        });
+        $("#contact").mouseover(function() {
+            $("#aContact").addClass("active");
+        }).mouseout(function() {
+            $("#aContact").removeClass("active");
+        });
+    });
+</script>
