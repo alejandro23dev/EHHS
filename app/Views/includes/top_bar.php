@@ -1,31 +1,4 @@
-<?php //var_dump($language);
-if(!isset($session['caption_language']))
-    $session['caption_language']='english';
 
-$fill_profile='';$badge='';//var_dump($session['no_filled']);
-
-if($session['no_filled']!='' && array_key_exists("NO_FILLED_PERSON", $session['no_filled']) && isset($profile_type['percent']))
-$fill_profile = '<i class="fa fa-exclamation-triangle" style="color:white;"></i>';
-elseif(isset($session['no_filled']) && array_key_exists("NO_FILLED_PERSON", $session['no_filled']) && !isset($profile_type['percent']))
-$fill_profile = '<i class="fa fa-exclamation-triangle" style="color:red;"></i>';
-
-if(isset($profile_type['percent']) && $profile_type['percent']==100)
-{
-    $badge = '<span class="badge badge-green rounded-2x">100%</span>';
-}
-elseif(isset($profile_type['percent']) && $profile_type['percent']>=0)
-{
-    $badge = '<span class="badge badge-red rounded-2x">'.$fill_profile.' '.$profile_type['percent'] . '%</span>';
-}
-elseif(!isset($profile_type['percent']))
-{
-	$badge = $fill_profile;
-}
-
-
-//var_dump($session['no_filled']);
-
-?>
 <!-- Topbar -->
 <div class="topbar">
     <div class="container">
@@ -35,20 +8,12 @@ elseif(!isset($profile_type['percent']))
                 <i class="fa fa-globe"></i>
                 <a>Languages</a>
                 <ul class="lenguages">
-                    <li><a onclick="SwitchLanguage('english');">English <i class="fa fa-check check_lang" id="check_english" <?php if($session['caption_language']!='english'){?>style="display: none;"<?php }?>></i></a></li>
-                    <li><a onclick="SwitchLanguage('spanish');">Spanish <i class="fa fa-check check_lang" id="check_spanish" <?php if($session['caption_language']!='spanish'){?>style="display: none;"<?php }?>></i></a></li>
+                    <li><a onclick="SwitchLanguage('english');">English <i class="fa fa-check check_lang" id="check_english" ></i></a></li>
+                    <li><a onclick="SwitchLanguage('spanish');">Spanish <i class="fa fa-check check_lang" id="check_spanish" ></i></a></li>
                 </ul>
             </li>
 
-            <?php if(isset($session['user']) && $session['user']!=''){?>
-                <li class="topbar-devider"></li>
-                <li id="logout"><a onclick="LoadContent('User');">My Account <?php print $badge; //print $badge;?></a></li>
-            <?php }?>
-
-            <?php if(isset($session['user']) && $session['user']!=''){?>
-                <li class="topbar-devider"></li>
-                <li id="logout"><a onclick="Logout('Authentication/Logout');">Logout</a></li>
-            <?php }?>
+            
         </ul>
         <!-- End Topbar Navigation -->
     </div>

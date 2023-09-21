@@ -8,14 +8,7 @@
 </div>
 <!--=== End Header ===-->
 
-<?php
-$slider=1;
-if(isset($session['rol']) && $session['rol']=='asist')
-    $slider=0;
 
-if($slider==1)
-{
-    ?>
     <!--=== Slider ===-->
     <div id="myslider" class="fullwidthbanner-container">
         <div class="fullwidthbanner">
@@ -32,7 +25,7 @@ if($slider==1)
                          data-speed="500"
                          data-start="800"
                          data-easing="easeOutExpo">
-                        <?php print COMPANY;?>
+                        
                     </div>
 
                     <div class="caption randomrotate"
@@ -167,7 +160,7 @@ if($slider==1)
                          data-speed="1"
                          data-start="6000"
                          data-easing="easeOutExpo" data-end="9000" data-endspeed="300" data-endeasing="easeInSine">
-                        <img class="img-border" style='width:150px;border-radius:50% !important;'src="<?php print base_url('assets/images/logo.jpg'); ?>" alt="<?php print COMPANY;?>">
+                        <img class="img-border" style='width:150px;border-radius:50% !important;'src="<?php print base_url('assets/images/logo.jpg'); ?>" alt="">
                     </div>-->
                 </li>
 
@@ -183,7 +176,7 @@ if($slider==1)
                          data-speed="500"
                          data-start="800"
                          data-easing="easeOutExpo">
-                        <?php print COMPANY;?>
+                        
                     </div>
 							
 					<div class="caption modern_medium_light lfl stl"
@@ -323,7 +316,7 @@ if($slider==1)
                          data-speed="500"
                          data-start="800"
                          data-easing="easeOutExpo">
-                        <?php print COMPANY;?>
+                       
                     </div>
 
                 </li>
@@ -335,6 +328,3 @@ if($slider==1)
         </div>
     </div>
     <!--=== End Slider ===-->
-    <?php
-}
-?>

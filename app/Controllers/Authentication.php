@@ -185,7 +185,7 @@ class Authentication extends BaseController
                                 '</body>
                             </html>';
 
-                        $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                        $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                     }
                 }
                 elseif ($send=='user')
@@ -206,7 +206,7 @@ class Authentication extends BaseController
                                 '</body>
                             </html>';
 
-                    print $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                    print $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                 }
                 elseif ($send=='sec_question_continue')
                 {
@@ -260,7 +260,7 @@ class Authentication extends BaseController
 									'</body>
 								</html>';
 
-                                $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                                $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
 						}
 					}
                 }
@@ -294,7 +294,7 @@ class Authentication extends BaseController
                         
                         $MT_Mail = new MT_Mail();
 
-                        $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                        $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                     }
                 }
                 elseif ($send=='recover')
@@ -335,7 +335,7 @@ class Authentication extends BaseController
                             '</body>
                             </html>';
 
-                         $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                         $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
                     }
                 }
 

@@ -10,7 +10,7 @@
     <div class="clearfix margin-bottom-20"></div>
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="padding: 0px;">
-        <?php //if($section_left_auth!='')require_once APPPATH.'views'.$section_left_auth;
+     <!-- <?php //if($section_left_auth!='')require_once APPPATH.'views'.$section_left_auth; 
 
 
         $fill_profile='';$badge='';$percent=0;//var_dump($session['no_filled']);
@@ -186,6 +186,7 @@
             <?php
         }
         ?>
+        -->
     </div>
 
 

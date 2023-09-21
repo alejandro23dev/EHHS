@@ -413,3 +413,837 @@ in APPPATH\Helpers\general_helper.php on line 7.
  3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 14:58:46 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 14:59:05 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 7.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 14:59:37 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 14:59:38 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:14:15 --> Call to undefined function CI()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:14:16 --> Call to undefined function CI()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:14:16 --> Call to undefined function CI()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:14:16 --> Call to undefined function CI()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:14:16 --> Call to undefined function CI()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:15:47 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:15:48 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:15:48 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:15:48 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:15:48 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:15:49 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:24:53 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:24:53 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:24:54 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:24:54 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:26:11 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:26:12 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:26:12 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:26:12 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:26:12 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 15:26:12 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:10:45 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:51 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:52 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:52 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:52 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:52 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:52 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:53 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:11:53 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:12:41 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:12:42 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:14:31 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:16:16 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:18:42 --> Call to undefined function get_instance()
+in APPPATH\Helpers\general_helper.php on line 8.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:45:31 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 11.
+ 1 APPPATH\Helpers\general_helper.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 11, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:45:31 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 11.
+ 1 APPPATH\Helpers\general_helper.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 11, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:45:31 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 11.
+ 1 APPPATH\Helpers\general_helper.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 11, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:45:32 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 11.
+ 1 APPPATH\Helpers\general_helper.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 11, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:46:50 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 16.
+ 1 APPPATH\Helpers\general_helper.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 16, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:46:51 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 16.
+ 1 APPPATH\Helpers\general_helper.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 16, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:46:51 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$session
+in APPPATH\Helpers\general_helper.php on line 16.
+ 1 APPPATH\Helpers\general_helper.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$session', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 16, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:12 --> Call to undefined method CodeIgniter\Session\Session::userdata()
+in APPPATH\Helpers\general_helper.php on line 16.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:13 --> Call to undefined method CodeIgniter\Session\Session::userdata()
+in APPPATH\Helpers\general_helper.php on line 16.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:13 --> Call to undefined method CodeIgniter\Session\Session::userdata()
+in APPPATH\Helpers\general_helper.php on line 16.
+ 1 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 17.
+ 1 APPPATH\Helpers\general_helper.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 17, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 17.
+ 1 APPPATH\Helpers\general_helper.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 17, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 17.
+ 1 APPPATH\Helpers\general_helper.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 17, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:47:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 17.
+ 1 APPPATH\Helpers\general_helper.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 17, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:49:22 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:50:44 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:50:44 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:50:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:50:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:56:04 --> Use of undefined constant EMAIL_FROM - assumed 'EMAIL_FROM' (this will throw an Error in a future version of PHP)
+in APPPATH\Helpers\general_helper.php on line 23.
+ 1 APPPATH\Helpers\general_helper.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant EMAIL_FROM - assumed \'EMAIL_FROM\' (this will throw an Error in a future version of PHP)', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 23, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:56:09 --> Illegal string offset 'id_user'
+in APPPATH\Helpers\general_helper.php on line 25.
+ 1 APPPATH\Helpers\general_helper.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'id_user\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 25, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 20:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 20:56:10 --> Illegal string offset 'id_user'
+in APPPATH\Helpers\general_helper.php on line 25.
+ 1 APPPATH\Helpers\general_helper.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'id_user\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 25, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:09:31 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:09:32 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 20.
+ 1 APPPATH\Helpers\general_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 20, [...])
+ 2 APPPATH\Controllers\Main.php(31): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:19:27 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:20:03 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:20:04 --> Undefined index: no_filled
+in APPPATH\Views\includes\top_bar.php on line 7.
+ 1 APPPATH\Views\includes\top_bar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: no_filled', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 7, [...])
+ 2 APPPATH\Views\includes\nav.php(5): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:20:20 --> Undefined variable: session
+in APPPATH\Views\includes\top_bar.php on line 11.
+ 1 APPPATH\Views\includes\top_bar.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: session', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php', 11, [...])
+ 2 APPPATH\Views\includes\nav.php(5): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\top_bar.php')
+ 3 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 7 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:21:56 --> Use of undefined constant COMPANY - assumed 'COMPANY' (this will throw an Error in a future version of PHP)
+in APPPATH\Views\includes\nav.php on line 35.
+ 1 APPPATH\Views\includes\nav.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant COMPANY - assumed \'COMPANY\' (this will throw an Error in a future version of PHP)', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php', 35, [...])
+ 2 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 6 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:22:32 --> syntax error, unexpected '}', expecting end of file
+in APPPATH\Views\includes\nav.php on line 332.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 4 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:22:42 --> Use of undefined constant COMPANY - assumed 'COMPANY' (this will throw an Error in a future version of PHP)
+in APPPATH\Views\includes\nav.php on line 163.
+ 1 APPPATH\Views\includes\nav.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant COMPANY - assumed \'COMPANY\' (this will throw an Error in a future version of PHP)', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php', 163, [...])
+ 2 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 6 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:22:49 --> Use of undefined constant COMPANY - assumed 'COMPANY' (this will throw an Error in a future version of PHP)
+in APPPATH\Views\includes\nav.php on line 163.
+ 1 APPPATH\Views\includes\nav.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant COMPANY - assumed \'COMPANY\' (this will throw an Error in a future version of PHP)', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php', 163, [...])
+ 2 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 6 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:22:51 --> Use of undefined constant COMPANY - assumed 'COMPANY' (this will throw an Error in a future version of PHP)
+in APPPATH\Views\includes\nav.php on line 163.
+ 1 APPPATH\Views\includes\nav.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant COMPANY - assumed \'COMPANY\' (this will throw an Error in a future version of PHP)', 'C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php', 163, [...])
+ 2 APPPATH\Views\Main.php(7): include_once('C:\\wamp64\\www\\EHHS\\app\\Views\\includes\\nav.php')
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 6 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:25:26 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:25:33 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:25:44 --> Call to undefined method CodeIgniter\Router\RouteCollection::getPostGet()
+in APPPATH\Config\Routes.php on line 9.
+ 1 SYSTEMPATH\Router\RouteCollection.php(339): require()
+ 2 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:25:56 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:27:19 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:27:24 --> Use of undefined constant VIEW_URL - assumed 'VIEW_URL' (this will throw an Error in a future version of PHP)
+in APPPATH\Views\Main.php on line 6.
+ 1 APPPATH\Views\Main.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant VIEW_URL - assumed \'VIEW_URL\' (this will throw an Error in a future version of PHP)', 'C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php', 6, [...])
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\EHHS\\app\\Views\\Main.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Main', [], true)
+ 5 APPPATH\Controllers\Main.php(32): view('Main', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:27:29 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:28:25 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:28:41 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:29:46 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:29:47 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:30:07 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:30:08 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:30:09 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:30:10 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:31:26 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:32:15 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:32:47 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:32:52 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:32:59 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:34:30 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:37:13 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:38:17 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-20 21:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-20 21:48:39 --> Illegal string offset 'caption_language'
+in APPPATH\Helpers\general_helper.php on line 21.
+ 1 APPPATH\Helpers\general_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption_language\'', 'C:\\wamp64\\www\\EHHS\\app\\Helpers\\general_helper.php', 21, [...])
+ 2 APPPATH\Controllers\Dashboard.php(21): GetSessionVars()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:49:31 --> Undefined index: session
+in APPPATH\Controllers\Dashboard.php on line 24.
+ 1 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: session', 'C:\\wamp64\\www\\EHHS\\app\\Controllers\\Dashboard.php', 24, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:50:45 --> Undefined index: session
+in APPPATH\Controllers\Dashboard.php on line 24.
+ 1 APPPATH\Controllers\Dashboard.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: session', 'C:\\wamp64\\www\\EHHS\\app\\Controllers\\Dashboard.php', 24, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dashboard->GoDashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

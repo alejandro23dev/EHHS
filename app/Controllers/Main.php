@@ -13,26 +13,11 @@ use MT_Mail;
 class Main extends BaseController
 {
 
-    public function index($view="Main", $msg="", $success="", $warning="", $error="")
+    public function index()
 	{
-        $data['msg']=$msg;
-        $data['success']=$success;
-        $data['warning']=$warning;
-        $data['error']=$error;
-        $data['view']=$view;
-		
-		$data['ctr']=$this->request->getPost('c');
-		$data['func']=$this->request->getPost('f');
-		$data['param1']=$this->request->getPost('p1');
-		$data['param2']=$this->request->getPost('p2');
-		$data['view_area']=$this->request->getPost('v');
+        $data['view']='template/index';
 
-        helper('general_helper');
-        $data['session']=GetSessionVars();
-        $data['language']=LoadLanguage();
-        $data['profile_type']=ProfileType($data['session']);
-
-		return view("Main", $data);
+		return view("includes/header", $data);
 	}
 
     public function LlenarDataTable()
@@ -559,7 +544,7 @@ class Main extends BaseController
         }
     }
 
-    public function EnviarEmail()
+    public function SendEmail()
     {
         $from_email=$_POST['from_email'];
         $from_name=$_POST['from_name'];
@@ -571,7 +556,7 @@ class Main extends BaseController
         $attachments=$_POST['attachments'];
 
         $MT_Mail = new MT_Mail();
-        $return = $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+        $return = $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
 
         print $return;
     }
@@ -610,7 +595,7 @@ class Main extends BaseController
                 EMAIL_SIGNATURE.'</body></html>';
 
                 $MT_Mail = new MT_Mail();
-                $MT_Mail->EnviarEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
+                $MT_Mail->SendEmail($from_email, $from_name, $email_to, $reply_to_email, $reply_to_name, $subject, $body, $attachments);
         }
     }
 
@@ -638,7 +623,7 @@ class Main extends BaseController
 
     public function DownloadFile()
     {
-        $src=$this->input->get('sub_folder');
+        $src=$this->request->getPostGet('sub_folder');
 
         if($src!='')
         {

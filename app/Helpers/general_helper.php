@@ -1,19 +1,25 @@
 <?php
 
+use App\Models\Auth;
+use App\Models\M_Main;
 
 function GetSessionVars()
 {
     $data='';
-    $my_instance =& get_instance();
+    $my_instance = \Config\Services::request();
+    
 
-    if(!$my_instance->session->userdata('language'))
-    {
-        $session_lang = array('lang' => 'english');
-        $my_instance->session->set_userdata('language', $session_lang);
+    if (!session()->has('language')) {
+        $session_lang = ['lang' => 'english'];
+        session()->set('language', $session_lang);
     }
 
-    $session_lang = $my_instance->session->userdata('language');
-    $data['caption_language'] = $session_lang['lang'];
+    $session_lang = session()->get('language');
+    if (isset($session_lang['caption_language'])) {
+        $data['caption_language'] = $session_lang['caption_language'];
+    } else {
+        $data['caption_language'] = 'english';
+    }
 
     $data['email_from'] = EMAIL_FROM;
     $data['email_from_name'] = EMAIL_FROM_NAME;
@@ -28,9 +34,9 @@ function GetSessionVars()
     $data['id_person'] = '';
 	$data['no_filled']=array();
 
-    if($my_instance->session->userdata('logged_user_ehhs'))
+    if($$my_instance->session->userdata('logged_user_ehhs'))
     {
-        $session_data = $my_instance->session->userdata('logged_user_ehhs');
+        $session_data = $$my_instance->session->userdata('logged_user_ehhs');
 
         if (isset($session_data['id_user']))
         {
@@ -41,20 +47,21 @@ function GetSessionVars()
             $data['section_auth'] = '';
             $data['id_person'] = $session_data['id_person'];
 
-            $my_instance->load->model('M_Main');//print $data['rol'];
+            $MainModel = new M_Main;//print $data['rol'];
 
             if ($data['rol']=='employee')
-                $data['no_filled']=$my_instance->M_Main->CkeckEmployee($data);
+                $data['no_filled']=$MainModel->CheckEmployee($data);
             elseif ($data['rol']=='patient')
-                $data['no_filled']=$my_instance->M_Main->CkeckClient($data);
+                $data['no_filled']=$MainModel->CheckClient($data);
             else
-                $data['no_filled']=$my_instance->M_Main->CkeckProfile($data);
+                $data['no_filled']=$MainModel->CheckProfile($data);
         }
         else
         {
-            $my_instance->session->unset_userdata('logged_user_ehhs');
-            $my_instance->load->model('Auth');
-            $my_instance->Auth->Logout();
+            
+            $my_instance->session->unset('logged_user_ehhs');
+$AuthModel = new Auth;
+$my_instance = $AuthModel->logout();
         }
     }
 
@@ -64,7 +71,7 @@ function GetSessionVars()
 function UpdateSessionVars($key, $value)
 {
     $data='';
-    $my_instance =& get_instance();
+    $my_instance = \Config\Services::request();
 
     if($my_instance->session->userdata('logged_user_ehhs'))
     {
@@ -90,11 +97,11 @@ function UpdateSessionVars($key, $value)
         $my_instance->load->model('M_Main');
 
         if ($data['rol']=='employee')
-            $data['no_filled']=$my_instance->M_Main->CkeckEmployee($data);
+            $data['no_filled']=$my_instance->M_Main->CheckEmployee($data);
         elseif ($data['rol']=='patient')
-            $data['no_filled']=$my_instance->M_Main->CkeckClient($data);
+            $data['no_filled']=$my_instance->M_Main->CheckClient($data);
         else
-            $data['no_filled']=$my_instance->M_Main->CkeckProfile($data);
+            $data['no_filled']=$my_instance->M_Main->CheckProfile($data);
 
         $my_instance->session->set_userdata('logged_user_ehhs', $data);//var_dump($data);
     }
@@ -102,7 +109,7 @@ function UpdateSessionVars($key, $value)
 
 function LoadLanguage()
 {
-    $my_instance =& get_instance();
+    $my_instance = \Config\Services::request();
 
     if(!$my_instance->session->userdata('language'))
     {
@@ -121,7 +128,7 @@ function LoadLanguage()
 function ProfileType($session)
 {
     $data = [];
-    $my_instance =& get_instance();
+    $my_instance = \Config\Services::request();
     $access_profile = $session['rol'];
     $id_person = $session['id_person'];
 

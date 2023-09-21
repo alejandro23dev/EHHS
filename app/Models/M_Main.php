@@ -136,7 +136,7 @@ Class M_Main extends Model
         return $return;
     }
 
-    public function CkeckProfile($data)
+    public function CheckProfile($data)
 	{
 		$i=0;
 		$return=array();
@@ -160,7 +160,7 @@ Class M_Main extends Model
 		return $return;
 	}
 
-	public function CkeckEmployee($data)
+	public function CheckEmployee($data)
 	{
 		$i=0;
 		$return=array();
@@ -185,7 +185,7 @@ Class M_Main extends Model
 		return $return;
 	}
 
-	public function CkeckClient($data)
+	public function CheckClient($data)
 	{
 		$return=array();
 

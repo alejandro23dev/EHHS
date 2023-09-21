@@ -1,15 +1,16 @@
-<?php include_once(APPPATH."views/includes/header.php");?>
+<?php echo view('includes/header');?>
 
 <body>
 
     <div class="wrapper">
-        <?php include_once(VIEW_URL."includes/hidden.php");?>
-        <?php include_once(VIEW_URL."includes/nav.php");?>
+    <?php echo view('includes/hidden');?>
+    <?php echo view('nav/top_bar');?>
+    </div>
 
         <div id="main-view"></div>
 
-        <?php include_once(VIEW_URL."includes/footer_scripts.php");?>
-        <?php include_once(VIEW_URL."includes/footer.php");?>
+        <?php echo view('includes/footer_scripts');?>
+        <?php echo view('includes/footer');?>
 
 
 

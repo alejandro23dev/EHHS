@@ -6,7 +6,7 @@ class MT_Mail
 
     }
 
-    function EnviarEmail($from_email='', $from_name='', $email_to='', $reply_to_email='', $reply_to_name='', $subject='', $body='', $attachments='')
+    function SendEmail($from_email='', $from_name='', $email_to='', $reply_to_email='', $reply_to_name='', $subject='', $body='', $attachments='')
     {
         date_default_timezone_set('Etc/UTC');
 
