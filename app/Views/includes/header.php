@@ -9,7 +9,7 @@
     <meta content="Esperanza Home Health Services" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="<?php echo base_url('assets/images/icon.ico');?>" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -37,7 +37,6 @@
 
     <link rel="stylesheet" href="<?php echo base_url('assets/js/alertifyjs/css/alertify.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/js/select2/select2.min.css'); ?>"/>
-    <link rel="shortcut icon" href="<?php echo base_url('') ;?>" type="image/x-icon">
 
     <link rel="stylesheet" href="<?php echo base_url('assets/unify/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/js/jQuery-File-Upload-9.20.0/css/jquery.fileupload.css'); ?>">

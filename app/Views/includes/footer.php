@@ -116,7 +116,7 @@
 	            </div>
 	        </div>
 	    </div>
-	</div><!--/footer-->
+	</div>
 	<!--=== End Footer ===-->
 
 	</div><!--/wrapper-->
